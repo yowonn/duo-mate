@@ -7,10 +7,10 @@ public class VerProgreso {
     public void mostrarNombre(String NombreEstudiante){
         System.out.println("Progreso de: "+NombreEstudiante);
     }
-    public void mostrarPuntaje(int PuntosActuales){
+    public void mostrarPuntaje(double PuntosActuales){
         System.out.println("Puntaje actual: "+PuntosActuales);
     }
-    public void mostrarIntentosRealizados(int IntentosTotal){
+    public void mostrarIntentosRealizados(double IntentosTotal){
         System.out.println("Intentos totales: "+IntentosTotal);
     }
     public void mostrarPorcentajeAcierto(double PorcentajeAcierto){

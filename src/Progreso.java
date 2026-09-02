@@ -8,10 +8,10 @@ public class Progreso {
     public String getNombreEstudiante(){
         return EstudianteActivo.getNombreEstudiante();
     }
-    public int getPuntajeEstudiante(){
+    public double getPuntajeEstudiante(){
         return EstudianteActivo.getPuntajeEstudiante();
     }
-    public int getIntentosEstudiante(){
+    public double getIntentosEstudiante(){
         return EstudianteActivo.getIntentosEstudiante();
     }
     public double PorcentajeAciertosEstudiante(){

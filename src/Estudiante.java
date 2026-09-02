@@ -1,8 +1,8 @@
 public class Estudiante {
     private String NombreEstudiante;
     private String ContrasenaEstudiante;
-    private int PuntajeEstudiante;
-    private int IntentosEstudiante;
+    private double PuntajeEstudiante;
+    private double IntentosEstudiante;
 
     public Estudiante(String NombreEstudiante, String ContrasenaEstudiante){
         this.NombreEstudiante = NombreEstudiante;
@@ -18,10 +18,10 @@ public class Estudiante {
     public String getContrasenaEstudiante(){
         return ContrasenaEstudiante;
     }
-    public int getPuntajeEstudiante(){
+    public double getPuntajeEstudiante(){
         return PuntajeEstudiante;
     }
-    public int getIntentosEstudiante(){
+    public double getIntentosEstudiante(){
         return IntentosEstudiante;
     }
 
