@@ -1,7 +1,11 @@
-import java.nio.channels.Pipe.SourceChannel;
 import java.util.Scanner;
 public class Preguntas {
+    private Estudiante EstudianteActivo;
     Scanner lectura = new Scanner(System.in);
+
+    public Preguntas(Estudiante EstudianteActivo){
+        this.EstudianteActivo = EstudianteActivo;
+    }
 
     public void Preguntas_Factorizacion(){
         int puntos = 0;
@@ -130,6 +134,9 @@ public class Preguntas {
                 lectura.nextLine();
                 break;
         }
+
+        EstudianteActivo.sumaIntentos(4);
+        EstudianteActivo.sumaPuntaje(puntos);
 
         switch (puntos) {
             case 0:
