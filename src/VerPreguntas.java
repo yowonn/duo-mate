@@ -9,9 +9,9 @@ public class VerPreguntas {
     public void DatoIngresadoIncorrecto(){
         System.out.println("\nEl dato ingresado no corresponde a una respuesta, porfavotr ingrese un numero del 1 al 4:");
     }
-  
+
     public int InicioyPregunta1Factorizacion(){
-         System.out.println("\n****MODULO DE PREGUNTAS: FACTORIZACIÓN****");
+        System.out.println("\n****MODULO DE PREGUNTAS: FACTORIZACIÓN****");
 
         System.out.println("\nPregunta 1:");
         System.out.println("\nsegún la siguiente expresión:");

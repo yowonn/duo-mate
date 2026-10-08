@@ -1,42 +1,47 @@
 public class ControlMenu {
-    private VerMenuPrincipal VerMenuPrincipal1;
     private Preguntas Preguntas1;
     private ControlProgreso ControlProgreso1;
+    private SwingVerMenuPrincipal SwingVerMenuPrincipal1;
 
     public ControlMenu(Estudiante EstudianteActivo){
-        VerMenuPrincipal1 = new VerMenuPrincipal();
-        Preguntas1 = new Preguntas(EstudianteActivo);
-        ControlProgreso1 = new ControlProgreso(EstudianteActivo);
+        SwingVerMenuPrincipal1 = new SwingVerMenuPrincipal();
+        SwingVerMenuPrincipal1.presionarProgreso(e-> abrirProgreso(EstudianteActivo));
+        SwingVerMenuPrincipal1.presionarCerrarSesion(e-> cerrarSesion(EstudianteActivo));
+        SwingVerMenuPrincipal1.presionarTema1(e-> ejecutarTema1(EstudianteActivo));
+        SwingVerMenuPrincipal1.presionarCerrarPrograma(new java.awt.event.WindowAdapter() {
+                public void windowClosing(java.awt.event.WindowEvent e) {
+                    cerrarPrograma();
+                }
+            });
     }
 
-    public void elegirTema(){
-        Integer TemaSeleccionado = -1;
-        while(TemaSeleccionado != 0){
-            boolean VerificadorTema = false;
+    public void abrirProgreso(Estudiante EstudianteActivo){
+        SwingVerMenuPrincipal1.cerrarVentanaMenuPrincipal();
+        ControlProgreso1 = new ControlProgreso(EstudianteActivo);
+        ControlProgreso1.iniciarProgreso();
+    }
 
-            while(VerificadorTema == false){
-                VerMenuPrincipal1.mostrarTemas();
-                TemaSeleccionado = VerMenuPrincipal1.seleccionarTema();
+    public void cerrarSesion(Estudiante EstudianteActivo){
+        if(SwingVerMenuPrincipal1.confirmarCerrarSesion()){
+            EstudianteActivo = null;
+            SwingVerMenuPrincipal1.cerrarVentanaMenuPrincipal();
+            ControlEstudiante ControlEstudiante1 = new ControlEstudiante();
+            ControlEstudiante1.iniciarInicioSesion();
+        }
+    }
 
-                switch(TemaSeleccionado){
-                    case 0:
-                    //Aqui crear metodo para mensaje para cuando cierre sesion
-                        VerificadorTema = true;
-                        break;
-                    case 1:
-                        VerificadorTema = true;
-                        ControlProgreso1.presentarEstadisticas();
-                        break;
-                    case 2:
-                        VerificadorTema = true;
-                        Preguntas1.Preguntas_Factorizacion();
-                        break;
+    public void ejecutarTema1(Estudiante EstudianteActivo){
+        Preguntas1 = new Preguntas(EstudianteActivo);
+        Preguntas1.Preguntas_Factorizacion();
+    }
 
-                    default:
-                        VerMenuPrincipal1.errorTema();
-                        break;
-                }
-            }
+    public void iniciarMenuPrincipal(){
+        SwingVerMenuPrincipal1.setVisible(true);
+    }
+
+    public void cerrarPrograma(){
+        if (SwingVerMenuPrincipal1.confirmarCerrarPrograma()) {
+            System.exit(0);
         }
     }
 }

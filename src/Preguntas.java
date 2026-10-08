@@ -2,12 +2,15 @@ import java.util.Scanner;
 public class Preguntas {
     private Estudiante EstudianteActivo;
     Scanner lectura = new Scanner(System.in);
+
     VerPreguntas vistaPreguntas = new VerPreguntas();
        
+
 
     public Preguntas(Estudiante EstudianteActivo){
         this.EstudianteActivo = EstudianteActivo;
     }
+        
 
     public void Preguntas_Factorizacion(){
         int puntos = 0;

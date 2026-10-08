@@ -1,20 +1,33 @@
 public class ControlProgreso {
-    private VerProgreso VerProgreso1;
+
     private Progreso Progreso1;
+    private SwingVerProgreso SwingVerProgreso1;
 
     ControlProgreso(Estudiante EstudianteActivo){
-        this.VerProgreso1 = new VerProgreso();
-        this.Progreso1 = new Progreso(EstudianteActivo);
+        Progreso1 = new Progreso(EstudianteActivo);
+        SwingVerProgreso1 = new SwingVerProgreso(Progreso1.getNombreEstudiante(),Progreso1.getPuntajeEstudiante(),
+        Progreso1.getIntentosEstudiante(),Progreso1.PorcentajeAciertosEstudiante());
+        SwingVerProgreso1.presionarAtras(e-> cerrarProgreso(EstudianteActivo));
+        SwingVerProgreso1.presionarCerrarPrograma(new java.awt.event.WindowAdapter() {
+                public void windowClosing(java.awt.event.WindowEvent e) {
+                    cerrarPrograma();
+                }
+            });
     }
 
-    public void presentarEstadisticas(){
-        VerProgreso1.tituloProgreso();
-        VerProgreso1.mostrarNombre(Progreso1.getNombreEstudiante());
-        VerProgreso1.mostrarPuntaje(Progreso1.getPuntajeEstudiante());
-        VerProgreso1.mostrarIntentosRealizados(Progreso1.getIntentosEstudiante());
-        VerProgreso1.mostrarPorcentajeAcierto(Progreso1.PorcentajeAciertosEstudiante());
+    public void cerrarProgreso(Estudiante EstudianteActivo){
+        SwingVerProgreso1.cerrarVentanaProgreso();
+        ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
+        ControlMenu1.iniciarMenuPrincipal();
     }
 
+    public void iniciarProgreso(){
+        SwingVerProgreso1.setVisible(true);
+    }
 
-
+    public void cerrarPrograma(){
+        if (SwingVerProgreso1.confirmarCerrarPrograma()) {
+            System.exit(0);
+        }
+    }
 }
