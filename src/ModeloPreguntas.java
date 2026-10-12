@@ -60,26 +60,56 @@ public class ModeloPreguntas {
     public String[] Modulo2_RANGO_f(){
         String[] M2_p2 = new String[6];
         M2_p2[0] = "\nf(x) = x^2 + 4x - 10"; //Pregunta: Rango de la función
-        M2_p2[1] = "\nRango: (-4, -∞)"; //Opcion 1
+        M2_p2[1] = "\nRango: (-4, -∞]"; //Opcion 1
         M2_p2[2] = "\nRango: [-14, +∞) "; //Opcion 2
-        M2_p2[3] = "\nRango: (-14, +∞)"; //Opcion 3
-        M2_p2[4] = "\nRango: [-14, -∞)"; //Opcion 4
+        M2_p2[3] = "\nRango: [-14, +∞]"; //Opcion 3
+        M2_p2[4] = "\nRango: [-14, +∞]"; //Opcion 4
         M2_p2[5] = "\nRango: [-14, +∞)"; //Respuesta correcta
         return M2_p2;
     }
 
     public String[] Modulo2_RAICEZ_NUM_i_f(){
+        String[] M3_p2 = new String[6];
+        M3_p2[0] = "\ny = √(-9)"; //pregunta
+        M3_p2[1] = "\ny = 3i"; //Opcion 1
+        M3_p2[2] = "\ny = -3"; //Opcion 2
+        M3_p2[3] = "\ny = 3"; //Opcion 3
+        M3_p2[4] = "\ny = -3i"; //Opcion 4
+        M3_p2[5] = "\ny = 3i"; //Respuesta correcta
+        return M3_p2;
+    }
+
+    public String[] Modulo3_Logaritmos(){
         String[] M2_p2 = new String[6];
-        M2_p2[0] = "\ny = √(-9)"; //pregunta
-        M2_p2[1] = "\ny = 3i"; //Opcion 1
-        M2_p2[2] = "\ny = -3"; //Opcion 2
-        M2_p2[3] = "\ny = 3"; //Opcion 3
-        M2_p2[4] = "\ny = -3i"; //Opcion 4
-        M2_p2[5] = "\ny = 3i"; //Respuesta correcta
+        M2_p2[0] = "\n  ln( e^(2x+20) )"; //pregunta
+        M2_p2[1] = "\n2x-20"; //Opcion 1
+        M2_p2[2] = "\n20-2x"; //Opcion 2
+        M2_p2[3] = "\ne^(2x)"; //Opcion 3
+        M2_p2[4] = "\n2x+20"; //Opcion 4
+        M2_p2[5] = "\n2x+20"; //Respuesta correcta
         return M2_p2;
     }
 
+    public String[] Modulo3_Dom_Range_f_log(){
+        String[] M3_p2 = new String[6];
+        M3_p2[0] = "\nf(x) = ln(2x) - 1"; //pregunta: DOMINO Y RANGO DE LA FUNCIÓN
+        M3_p2[1] = "\nD: (0,∞) ; R: (0, ∞]"; //Opcion 1
+        M3_p2[2] = "\nD: (0,∞) ; R: (-∞, ∞)"; //Opcion 2
+        M3_p2[3] = "\nD: [0,∞) ; R: [-∞, ∞]"; //Opcion 3
+        M3_p2[4] = "\nD: (1,∞) ; R: (-∞, ∞)"; //Opcion 4
+        M3_p2[5] = "\ny = 3i"; //Respuesta correcta
+        return M3_p2;
+    }
 
-
+    public String[] Modulo3_Probabilidad(){
+        String[] M3_p2 = new String[6];
+        M3_p2[0] = "\nFormula para interes compuesto, por capitalizacion continua"; //pregunta
+        M3_p2[1] = "\nm(t) = m0 * e^(-rt)"; //Opcion 1
+        M3_p2[2] = "\nT = A + B * e^(-kt)"; //Opcion 2
+        M3_p2[3] = "\nA = p * e^(rt)"; //Opcion 3
+        M3_p2[4] = "\nA = p * (1-r/n)^(n*t)"; //Opcion 4
+        M3_p2[5] = "\nA = p * e^(rt)"; //Respuesta correcta
+        return M3_p2;
+    }
 
 }
