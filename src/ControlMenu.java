@@ -32,7 +32,8 @@ public class ControlMenu {
 
     public void ejecutarTema1(Estudiante EstudianteActivo){
         Preguntas1 = new Preguntas(EstudianteActivo);
-        Preguntas1.Preguntas_Factorizacion();
+        SwingVerMenuPrincipal1.cerrarVentanaMenuPrincipal();
+        Preguntas1.ejecutarSerie();
     }
 
     public void iniciarMenuPrincipal(){

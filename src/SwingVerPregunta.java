@@ -78,7 +78,15 @@ public class SwingVerPregunta extends JFrame{
         Eleccion4.addActionListener(accion);
     }
 
-    public void cerrarVentanaProgreso(){
+    public void mostrarMensajeRespuestaCorrecta() {
+        JOptionPane.showMessageDialog(this, "Respuesta Correcta", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void mostrarMensajeRespuestaIncorrecta(String RespuestaCorrecta) {
+        JOptionPane.showMessageDialog(this, "Respuesta Incorrecta. Respuesta: "+RespuestaCorrecta, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void cerrarVentanaPreguntas(){
         dispose();
     }
 
