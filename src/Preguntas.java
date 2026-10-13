@@ -60,15 +60,8 @@ public class Preguntas {
             System.exit(0);
         }
     }
-    
-
+        
     public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1) {
-
-        if(YaRespondio) {
-            return;
-        }
-
-        YaRespondio = true;
 
         int correcta = Integer.parseInt(RespuestaCorrecta);
 
@@ -80,4 +73,5 @@ public class Preguntas {
         SwingVerPregunta1.mostrarBotonSiguiente();
     }
 }
+
 
