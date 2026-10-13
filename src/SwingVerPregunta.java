@@ -104,20 +104,19 @@ public class SwingVerPregunta extends JFrame{
         return respuesta == JOptionPane.YES_OPTION;
     }
 
-    public void cambiarColorRespuesta(int numero, boolean correcta) {
-    JButton boton = null;
+    
+    public void cambiarColorRespuesta(int numero, int respuestaCorrecta) {
+        JButton[] botones = {Eleccion1, Eleccion2, Eleccion3, Eleccion4};
 
-    if(numero == 1) boton = Eleccion1;
-    if(numero == 2) boton = Eleccion2;
-    if(numero == 3) boton = Eleccion3;
-    if(numero == 4) boton = Eleccion4;
+        DisenoPreguntas.respuestaCorrecta(botones[respuestaCorrecta - 1]);
 
-    if(boton != null) {
-        if(correcta) {
-            DisenoPreguntas.respuestaCorrecta(boton);
-        } else {
-            DisenoPreguntas.respuestaIncorrecta(boton);
+        if(numero != respuestaCorrecta) {
+            DisenoPreguntas.respuestaIncorrecta(botones[numero - 1]);
+        }
+
+        for(JButton boton : botones) {
+            boton.setEnabled(false);
         }
     }
-    }
+
 }

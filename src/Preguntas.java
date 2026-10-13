@@ -53,21 +53,25 @@ public class Preguntas {
         }
     }
     
-public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1) {
 
-    if(RespuestaIngresada == Integer.parseInt(RespuestaCorrecta)) {
-        ContadorCorrectas++;
-        SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, true);
-        SwingVerPregunta1.mostrarMensajeRespuestaCorrecta();
-    }
-    else {
-        SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, false);
-        SwingVerPregunta1.mostrarMensajeRespuestaIncorrecta(RespuestaCorrecta);
-    }
+    public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1) {
 
-    ContadorPreguntas++;
-    SwingVerPregunta1.cerrarVentanaPreguntas();
-    ejecutarSerie();
-}
+        int correcta = Integer.parseInt(RespuestaCorrecta);
+
+        if(RespuestaIngresada == correcta) {
+            ContadorCorrectas++;
+        }
+
+        SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, correcta);
+
+        javax.swing.Timer tiempo = new javax.swing.Timer(2000, e -> {
+            ContadorPreguntas++;
+            SwingVerPregunta1.cerrarVentanaPreguntas();
+            ejecutarSerie();
+        });
+
+        tiempo.setRepeats(false);
+        tiempo.start();
+    }
 }
 
