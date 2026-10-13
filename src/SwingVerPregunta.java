@@ -124,9 +124,10 @@ public class SwingVerPregunta extends JFrame{
         }
 
         for(JButton boton : botones) {
-            boton.setEnabled(false);
+            boton.setForeground(new Color(52, 70, 82));
         }
     }
+
 
     public void mostrarBotonSiguiente() {
         BotonSiguiente.setVisible(true);

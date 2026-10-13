@@ -4,11 +4,13 @@ public class Preguntas {
     private Estudiante EstudianteActivo;
     private int ContadorPreguntas;
     private int ContadorCorrectas;
+    private boolean YaRespondio;
 
     public Preguntas(Estudiante EstudianteActivo){
         ModeloPreguntas1 = new ModeloPreguntas();
         ContadorPreguntas = 0;
         ContadorCorrectas = 0;
+        YaRespondio = false;
         this.EstudianteActivo = EstudianteActivo;
     }
 
@@ -61,6 +63,12 @@ public class Preguntas {
     
 
     public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1) {
+
+        if(YaRespondio) {
+            return;
+        }
+
+        YaRespondio = true;
 
         int correcta = Integer.parseInt(RespuestaCorrecta);
 
