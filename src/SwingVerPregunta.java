@@ -114,6 +114,7 @@ public class SwingVerPregunta extends JFrame{
     }
 
     
+
     public void cambiarColorRespuesta(int numero, int respuestaCorrecta) {
         JButton[] botones = {Eleccion1, Eleccion2, Eleccion3, Eleccion4};
 
@@ -124,11 +125,10 @@ public class SwingVerPregunta extends JFrame{
         }
 
         for(JButton boton : botones) {
-            boton.setEnabled(false);
-            boton.setText(boton.getText().replace("<center>", "<center><font color='#344652'>")
-                                        .replace("</center>", "</font></center>"));
+            boton.setForeground(new Color(52, 70, 82));
         }
     }
+
 
     public void mostrarBotonSiguiente() {
         BotonSiguiente.setVisible(true);

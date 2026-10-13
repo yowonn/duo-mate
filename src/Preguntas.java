@@ -4,13 +4,13 @@ public class Preguntas {
     private Estudiante EstudianteActivo;
     private int ContadorPreguntas;
     private int ContadorCorrectas;
-    private boolean YaRespondio;
+    private boolean YaMostroResultado;
 
     public Preguntas(Estudiante EstudianteActivo){
         ModeloPreguntas1 = new ModeloPreguntas();
         ContadorPreguntas = 0;
         ContadorCorrectas = 0;
-        YaRespondio = false;
+        YaMostroResultado = false;
         this.EstudianteActivo = EstudianteActivo;
     }
 
@@ -36,6 +36,7 @@ public class Preguntas {
     }
 
     public void ejecutarPregunta(String[] ArregloPregunta){
+        YaMostroResultado = false;
         SwingVerPregunta1 = new SwingVerPregunta(ArregloPregunta);
         SwingVerPregunta1.presionarCerrarPrograma(new java.awt.event.WindowAdapter() {
                 public void windowClosing(java.awt.event.WindowEvent e) {
@@ -61,7 +62,12 @@ public class Preguntas {
         }
     }
         
+    
     public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1) {
+
+        if(YaMostroResultado) {
+            return;
+        }
 
         int correcta = Integer.parseInt(RespuestaCorrecta);
 
@@ -69,9 +75,15 @@ public class Preguntas {
             ContadorCorrectas++;
         }
 
+        YaMostroResultado = true;
         SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, correcta);
         SwingVerPregunta1.mostrarBotonSiguiente();
     }
+
+    public boolean yaMostroResultado() {
+        return YaMostroResultado;
+    }
+
 }
 
 
