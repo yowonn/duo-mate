@@ -1,10 +1,10 @@
-import java.swing.*;
+import javax.swing.*;
 import java.awt.*;
 
 public class DisenoPreguntas {
 
     public static void disenarBoton(JButton boton){
-        boton.setbackground(new Color(225, 246, 221));
+        boton.setBackground(new Color(225, 246, 221));
         boton.setForeground(new Color(52, 70,82));
         boton.setFont(new Font("Arial", Font.BOLD, 16));
         boton.setFocusPainted(false);
