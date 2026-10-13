@@ -11,6 +11,8 @@ public class SwingVerPregunta extends JFrame{
     private JButton Eleccion3;
     private JButton Eleccion4;
 
+    private JButton BotonSiguiente;
+
     public SwingVerPregunta(String[] InformacionPregunta){
         setTitle("Pregunta");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -50,8 +52,15 @@ public class SwingVerPregunta extends JFrame{
         PanelBotones.add(Eleccion3);
         PanelBotones.add(Eleccion4);
 
+        BotonSiguiente = new JButton("Siguiente pregunta →");
+        DisenoPreguntas.disenarBoton(BotonSiguiente);
+        BotonSiguiente.setVisible(false);
+        BotonSiguiente.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         PanelPrincipal.add(PanelOpciones);
         PanelPrincipal.add(PanelBotones);
+        PanelPrincipal.add(Box.createVerticalStrut(20));
+        PanelPrincipal.add(BotonSiguiente);
 
         add(PanelPrincipal);
 
@@ -117,6 +126,16 @@ public class SwingVerPregunta extends JFrame{
         for(JButton boton : botones) {
             boton.setEnabled(false);
         }
+    }
+
+    public void mostrarBotonSiguiente() {
+        BotonSiguiente.setVisible(true);
+        pack();
+        setLocationRelativeTo(null);
+    }
+
+    public void presionarSiguiente(ActionListener accion) {
+        BotonSiguiente.addActionListener(accion);
     }
 
 }

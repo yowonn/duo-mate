@@ -44,6 +44,12 @@ public class Preguntas {
         SwingVerPregunta1.seleccion2(e-> evaluarRespuesta(ArregloPregunta[5], 2, SwingVerPregunta1));
         SwingVerPregunta1.seleccion3(e-> evaluarRespuesta(ArregloPregunta[5], 3, SwingVerPregunta1));
         SwingVerPregunta1.seleccion4(e-> evaluarRespuesta(ArregloPregunta[5], 4, SwingVerPregunta1));
+        SwingVerPregunta1.presionarSiguiente(e -> {
+        
+        ContadorPreguntas++;
+        SwingVerPregunta1.cerrarVentanaPreguntas();
+            ejecutarSerie();
+        });
         SwingVerPregunta1.setVisible(true);
     }
 
@@ -63,15 +69,7 @@ public class Preguntas {
         }
 
         SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, correcta);
-
-        javax.swing.Timer tiempo = new javax.swing.Timer(2000, e -> {
-            ContadorPreguntas++;
-            SwingVerPregunta1.cerrarVentanaPreguntas();
-            ejecutarSerie();
-        });
-
-        tiempo.setRepeats(false);
-        tiempo.start();
+        SwingVerPregunta1.mostrarBotonSiguiente();
     }
 }
 
