@@ -22,35 +22,28 @@ public class SwingVerPregunta extends JFrame{
         PanelOpciones.setLayout(new BoxLayout(PanelOpciones, BoxLayout.Y_AXIS));
         JPanel PanelRespuestas = new JPanel();
         PanelRespuestas.setLayout(new BoxLayout(PanelRespuestas, BoxLayout.Y_AXIS));
-        JPanel PanelBotones = new JPanel();
+        
+        JPanel PanelBotones = new JPanel(new GridLayout(2, 2, 15, 15));
+
+        DisenoPreguntas.disenarPanel(PanelPrincipal);
+        DisenoPreguntas.disenarPanel(PanelOpciones);
+        DisenoPreguntas.disenarPanel(PanelBotones);
 
         JLabel PlantearPregunta = new JLabel(InformacionPregunta[0]);
-        JLabel Opcion1 = new JLabel("1.) "+InformacionPregunta[1]);
-        JLabel Opcion2 = new JLabel("2.) "+InformacionPregunta[2]);
-        JLabel Opcion3 = new JLabel("3.) "+InformacionPregunta[3]);
-        JLabel Opcion4 = new JLabel("4.) "+InformacionPregunta[4]);
-        Eleccion1 = new JButton("1");
-        Eleccion2 = new JButton("2");
-        Eleccion3 = new JButton("3");
-        Eleccion4 = new JButton("4");
+        DisenoPreguntas.disenarPregunta(PlantearPregunta);
 
-        PanelRespuestas.setAlignmentX(Component.CENTER_ALIGNMENT);
-        PlantearPregunta.setAlignmentX(Component.CENTER_ALIGNMENT);
-        Opcion1.setAlignmentX(Component.LEFT_ALIGNMENT);
-        Opcion2.setAlignmentX(Component.LEFT_ALIGNMENT);
-        Opcion3.setAlignmentX(Component.LEFT_ALIGNMENT);
-        Opcion4.setAlignmentX(Component.LEFT_ALIGNMENT);
-        
+        Eleccion1 = new JButton("<html><center>" + InformacionPregunta[1] + "</center></html>");
+        Eleccion2 = new JButton("<html><center>" + InformacionPregunta[2] + "</center></html>");
+        Eleccion3 = new JButton("<html><center>" + InformacionPregunta[3] + "</center></html>");
+        Eleccion4 = new JButton("<html><center>" + InformacionPregunta[4] + "</center></html>");
 
-        PanelRespuestas.add(Opcion1);
-        PanelRespuestas.add(Opcion2);
-        PanelRespuestas.add(Opcion3);
-        PanelRespuestas.add(Opcion4);
+        DisenoPreguntas.disenarBoton(Eleccion1);
+        DisenoPreguntas.disenarBoton(Eleccion2);
+        DisenoPreguntas.disenarBoton(Eleccion3);
+        DisenoPreguntas.disenarBoton(Eleccion4);
 
-        PanelOpciones.add(PlantearPregunta);
-        PanelOpciones.add(Box.createVerticalStrut(20));
-        PanelOpciones.add(PanelRespuestas);
-        PanelOpciones.add(Box.createVerticalStrut(20));
+         PanelOpciones.add(PlantearPregunta);
+        PanelOpciones.add(Box.createVerticalStrut(30));
 
         PanelBotones.add(Eleccion1);
         PanelBotones.add(Eleccion2);
@@ -59,6 +52,7 @@ public class SwingVerPregunta extends JFrame{
 
         PanelPrincipal.add(PanelOpciones);
         PanelPrincipal.add(PanelBotones);
+
         add(PanelPrincipal);
 
         pack();
@@ -68,12 +62,15 @@ public class SwingVerPregunta extends JFrame{
     public void seleccion1(ActionListener accion) {
         Eleccion1.addActionListener(accion);
     }
+
     public void seleccion2(ActionListener accion) {
         Eleccion2.addActionListener(accion);
     }
+
     public void seleccion3(ActionListener accion) {
         Eleccion3.addActionListener(accion);
     }
+
     public void seleccion4(ActionListener accion) {
         Eleccion4.addActionListener(accion);
     }
@@ -83,10 +80,10 @@ public class SwingVerPregunta extends JFrame{
     }
 
     public void mostrarMensajeRespuestaIncorrecta(String RespuestaCorrecta) {
-        JOptionPane.showMessageDialog(this, "Respuesta Incorrecta. Respuesta: "+RespuestaCorrecta, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Respuesta Incorrecta. Respuesta: " + RespuestaCorrecta, "Resultado", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public void cerrarVentanaPreguntas(){
+    public void cerrarVentanaPreguntas() {
         dispose();
     }
 
@@ -97,7 +94,7 @@ public class SwingVerPregunta extends JFrame{
     public boolean confirmarCerrarPrograma() {
         int respuesta = JOptionPane.showConfirmDialog(
             this,
-            "Su progreso no será guardado.\nPara guardar su progreso haga click en Cerrar Sesion en el Menu Principal"+
+            "Su progreso no será guardado.\nPara guardar su progreso haga click en Cerrar Sesion en el Menu Principal" +
             "\n¿Está seguro de que desea salir?",
             "Confirmar salida",
             JOptionPane.YES_NO_OPTION,
@@ -106,5 +103,4 @@ public class SwingVerPregunta extends JFrame{
 
         return respuesta == JOptionPane.YES_OPTION;
     }
-
 }
