@@ -52,17 +52,22 @@ public class Preguntas {
             System.exit(0);
         }
     }
-    public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1){
-        if(RespuestaIngresada == (Integer.parseInt(RespuestaCorrecta))){
-            ContadorCorrectas++;
-            SwingVerPregunta1.mostrarMensajeRespuestaCorrecta();
-        }
-        else{
-            SwingVerPregunta1.mostrarMensajeRespuestaIncorrecta(RespuestaCorrecta);
-        }
-        ContadorPreguntas++;
-        SwingVerPregunta1.cerrarVentanaPreguntas();
-        ejecutarSerie();
-    }
     
+public void evaluarRespuesta(String RespuestaCorrecta, int RespuestaIngresada, SwingVerPregunta SwingVerPregunta1) {
+
+    if(RespuestaIngresada == Integer.parseInt(RespuestaCorrecta)) {
+        ContadorCorrectas++;
+        SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, true);
+        SwingVerPregunta1.mostrarMensajeRespuestaCorrecta();
+    }
+    else {
+        SwingVerPregunta1.cambiarColorRespuesta(RespuestaIngresada, false);
+        SwingVerPregunta1.mostrarMensajeRespuestaIncorrecta(RespuestaCorrecta);
+    }
+
+    ContadorPreguntas++;
+    SwingVerPregunta1.cerrarVentanaPreguntas();
+    ejecutarSerie();
 }
+}
+
