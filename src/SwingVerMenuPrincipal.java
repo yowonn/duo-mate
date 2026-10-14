@@ -14,37 +14,66 @@ public class SwingVerMenuPrincipal extends JFrame{
 
         JPanel PanelPrincipal = new JPanel();
         PanelPrincipal.setLayout(new BoxLayout(PanelPrincipal, BoxLayout.Y_AXIS));
-        PanelPrincipal.setBorder(new EmptyBorder(30, 40, 30, 40));
+        PanelPrincipal.setBorder(new EmptyBorder(25, 35, 25, 35));
+        DisenoMenuPrincipal.disenarPanel(PanelPrincipal);
 
-        JPanel PanelBotonesGeneral = new JPanel();
-        PanelBotonesGeneral.setLayout(new BorderLayout());
+        JPanel PanelBotonesGeneral = new JPanel(new BorderLayout(20, 0));
+        PanelBotonesGeneral.setBackground(new Color(52, 70, 82));
+
         BotonCerrarSesion = new JButton("Cerrar sesion");
-        JLabel BienvenidaMenu = new JLabel("    DUO MATE    ");
-        BienvenidaMenu.setHorizontalAlignment(SwingConstants.CENTER);
         BotonProgreso = new JButton("Progreso");
-        PanelBotonesGeneral.add(BotonCerrarSesion, BorderLayout.EAST);
-        PanelBotonesGeneral.add(BienvenidaMenu, BorderLayout.CENTER);
+        DisenoMenuPrincipal.disenarBoton(BotonCerrarSesion);
+        DisenoMenuPrincipal.disenarBoton(BotonProgreso);
+
+        JLabel BienvenidaMenu = new JLabel("DUO-MATE");
+        BienvenidaMenu.setHorizontalAlignment(SwingConstants.CENTER);
+        BienvenidaMenu.setForeground(Color.WHITE);
+        BienvenidaMenu.setFont(new Font("Arial", Font.BOLD, 22));
+
         PanelBotonesGeneral.add(BotonProgreso, BorderLayout.WEST);
+        PanelBotonesGeneral.add(BienvenidaMenu, BorderLayout.CENTER);
+        PanelBotonesGeneral.add(BotonCerrarSesion, BorderLayout.EAST);
+        PanelBotonesGeneral.setMaximumSize(new Dimension(700, 65));
 
         JPanel PanelTemas = new JPanel();
         PanelTemas.setLayout(new BoxLayout(PanelTemas, BoxLayout.Y_AXIS));
-        JLabel TextoTituloTemas = new JLabel("Temas Disponibles");
-        JLabel TextoTemasDisponibles = new JLabel("1. Factorizacion");
-        TextoTituloTemas.setAlignmentX(Component.CENTER_ALIGNMENT);
-        TextoTemasDisponibles.setAlignmentX(Component.CENTER_ALIGNMENT);
+        DisenoMenuPrincipal.disenarPanel(PanelTemas);
+
+        JLabel TextoTituloTemas = new JLabel("Temas disponibles");
+        JLabel TextoTemasDisponibles = new JLabel("Selecciona un tema para comenzar");
+        DisenoMenuPrincipal.disenarTitulo(TextoTituloTemas);
+        DisenoMenuPrincipal.disenarTexto(TextoTemasDisponibles);
+
         PanelTemas.add(TextoTituloTemas);
-        PanelTemas.add(Box.createVerticalStrut(10));
+        PanelTemas.add(Box.createVerticalStrut(15));
         PanelTemas.add(TextoTemasDisponibles);
-        
+
         JPanel PanelBotonesTemas = new JPanel();
-        PanelBotonesTemas.setLayout(new FlowLayout());
-        BotonTema1 = new JButton("Tema 1");
+        PanelBotonesTemas.setLayout(new BoxLayout(PanelBotonesTemas, BoxLayout.Y_AXIS));
+        PanelBotonesTemas.setBackground(new Color(255, 246, 221));
+        PanelBotonesTemas.setBorder(new EmptyBorder(25, 70, 25, 70));
+
+        JLabel TituloTema1 = new JLabel("Tema 1");
+        JLabel NombreTema1 = new JLabel("Factorizacion");
+        DisenoMenuPrincipal.disenarTitulo(TituloTema1);
+        DisenoMenuPrincipal.disenarTexto(NombreTema1);
+
+        BotonTema1 = new JButton("Comenzar");
+        DisenoMenuPrincipal.disenarBoton(BotonTema1);
+        BotonTema1.setBackground(new Color(52, 70, 82));
+        BotonTema1.setForeground(Color.WHITE);
+        BotonTema1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        PanelBotonesTemas.add(TituloTema1);
+        PanelBotonesTemas.add(Box.createVerticalStrut(15));
+        PanelBotonesTemas.add(NombreTema1);
+        PanelBotonesTemas.add(Box.createVerticalStrut(25));
         PanelBotonesTemas.add(BotonTema1);
 
         PanelPrincipal.add(PanelBotonesGeneral);
         PanelPrincipal.add(Box.createVerticalStrut(50));
         PanelPrincipal.add(PanelTemas);
-        PanelPrincipal.add(Box.createVerticalStrut(50));
+        PanelPrincipal.add(Box.createVerticalStrut(35));
         PanelPrincipal.add(PanelBotonesTemas);
 
         add(PanelPrincipal);
