@@ -9,7 +9,7 @@ public class ControlEstudiante {
 
     String NombreIngresado;
     String ContrasenaIngresado;
-    public void registroEstudiante(){
+    public Estudiante registroEstudiante(){
         boolean VerificadorNombre = false;
         boolean VerificadorContrasena = false;
         while(VerificadorNombre == false){
@@ -32,5 +32,6 @@ public class ControlEstudiante {
         }
         EstudianteActivo = new Estudiante(NombreIngresado, ContrasenaIngresado);
         VerInicioSesion1.registroExitoso();
+        return EstudianteActivo;
     }
 }
