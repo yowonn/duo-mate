@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Random;
+
 import javax.swing.border.EmptyBorder;
 
 public class SwingVerPregunta extends JFrame{
-
+    Random random = new Random();
 
     private JButton Eleccion1;
     private JButton Eleccion2;
@@ -44,13 +46,24 @@ public class SwingVerPregunta extends JFrame{
         DisenoPreguntas.disenarBoton(Eleccion3);
         DisenoPreguntas.disenarBoton(Eleccion4);
 
-         PanelOpciones.add(PlantearPregunta);
+        PanelOpciones.add(PlantearPregunta);
         PanelOpciones.add(Box.createVerticalStrut(30));
 
-        PanelBotones.add(Eleccion1);
-        PanelBotones.add(Eleccion2);
-        PanelBotones.add(Eleccion3);
-        PanelBotones.add(Eleccion4);
+        JButton[] SortearBotones = {Eleccion1, Eleccion2, Eleccion3, Eleccion4};
+
+        int PosicionActual = SortearBotones.length -1;
+        while(PosicionActual > 0){
+            int PosicionAleatorio = random.nextInt(PosicionActual+1);
+            JButton GuardarTemporal = SortearBotones[PosicionActual];
+            SortearBotones[PosicionActual] = SortearBotones[PosicionAleatorio];
+            SortearBotones[PosicionAleatorio] = GuardarTemporal;
+            PosicionActual--;
+        }
+
+        for(JButton Eleccion : SortearBotones){
+            PanelBotones.add(Eleccion);
+        }
+
 
         BotonSiguiente = new JButton("Siguiente pregunta →");
         DisenoPreguntas.disenarBoton(BotonSiguiente);
