@@ -53,7 +53,7 @@ public class ModeloPreguntas {
         M2_p2[2] = "\nD = R - {5}"; //Opcion 2
         M2_p2[3] = "\nD = 5x -2"; //Opcion 3
         M2_p2[4] = "\nD = R - {0}"; //Opcion 4
-        M2_p2[5] = "\nD = R - {0}"; //Respuesta correcta
+        M2_p2[5] = "4"; //Respuesta correcta
         return M2_p2;
     }
 
@@ -64,7 +64,18 @@ public class ModeloPreguntas {
         M2_p2[2] = "\nRango: [-14, +∞) "; //Opcion 2
         M2_p2[3] = "\nRango: [-14, +∞]"; //Opcion 3
         M2_p2[4] = "\nRango: [-14, +∞]"; //Opcion 4
-        M2_p2[5] = "\nRango: [-14, +∞)"; //Respuesta correcta
+        M2_p2[5] = "2"; //Respuesta correcta
+        return M2_p2;
+    }
+
+    public String[] Modulo2_Asintota_f(){
+        String[] M2_p2 = new String[6];
+        M2_p2[0] = "\n¿Cual es la asintota vertical de la funcion?: \nf(x) = 1/x-2"; //Pregunta: Rango de la función
+        M2_p2[1] = "\nx = 2"; //Opcion 1
+        M2_p2[2] = "\nx = -2"; //Opcion 2
+        M2_p2[3] = "\nx = 0"; //Opcion 3
+        M2_p2[4] = "\nx = 1"; //Opcion 4
+        M2_p2[5] = "1"; //Respuesta correcta
         return M2_p2;
     }
 
@@ -75,7 +86,7 @@ public class ModeloPreguntas {
         M3_p2[2] = "\ny = -3"; //Opcion 2
         M3_p2[3] = "\ny = 3"; //Opcion 3
         M3_p2[4] = "\ny = -3i"; //Opcion 4
-        M3_p2[5] = "\ny = 3i"; //Respuesta correcta
+        M3_p2[5] = "1"; //Respuesta correcta
         return M3_p2;
     }
 

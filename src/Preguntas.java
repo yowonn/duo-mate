@@ -1,10 +1,10 @@
 public class Preguntas {
-    private SwingVerPregunta SwingVerPregunta1;
-    private ModeloPreguntas ModeloPreguntas1;
-    private Estudiante EstudianteActivo;
-    private int ContadorPreguntas;
-    private int ContadorCorrectas;
-    private boolean YaMostroResultado;
+    protected SwingVerPregunta SwingVerPregunta1;
+    protected ModeloPreguntas ModeloPreguntas1;
+    protected Estudiante EstudianteActivo;
+    protected int ContadorPreguntas;
+    protected int ContadorCorrectas;
+    protected boolean YaMostroResultado;
 
     public Preguntas(Estudiante EstudianteActivo){
         ModeloPreguntas1 = new ModeloPreguntas();
