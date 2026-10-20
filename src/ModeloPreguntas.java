@@ -97,7 +97,7 @@ public class ModeloPreguntas {
         M2_p2[2] = "\n20-2x"; //Opcion 2
         M2_p2[3] = "\ne^(2x)"; //Opcion 3
         M2_p2[4] = "\n2x+20"; //Opcion 4
-        M2_p2[5] = "\n2x+20"; //Respuesta correcta
+        M2_p2[5] = "4"; //Respuesta correcta
         return M2_p2;
     }
 
@@ -108,7 +108,7 @@ public class ModeloPreguntas {
         M3_p2[2] = "\nD: (0,∞) ; R: (-∞, ∞)"; //Opcion 2
         M3_p2[3] = "\nD: [0,∞) ; R: [-∞, ∞]"; //Opcion 3
         M3_p2[4] = "\nD: (1,∞) ; R: (-∞, ∞)"; //Opcion 4
-        M3_p2[5] = "\ny = 3i"; //Respuesta correcta
+        M3_p2[5] = "2"; //Respuesta correcta
         return M3_p2;
     }
 
@@ -119,7 +119,18 @@ public class ModeloPreguntas {
         M3_p2[2] = "\nT = A + B * e^(-kt)"; //Opcion 2
         M3_p2[3] = "\nA = p * e^(rt)"; //Opcion 3
         M3_p2[4] = "\nA = p * (1-r/n)^(n*t)"; //Opcion 4
-        M3_p2[5] = "\nA = p * e^(rt)"; //Respuesta correcta
+        M3_p2[5] = "3"; //Respuesta correcta
+        return M3_p2;
+    }
+
+    public String[] Modulo3_Exponencial(){
+        String[] M3_p2 = new String[6];
+        M3_p2[0] = "\nEvalue f(2) si f(x)=3^x"; //pregunta
+        M3_p2[1] = "9"; //Opcion 1
+        M3_p2[2] = "6"; //Opcion 2
+        M3_p2[3] = "27"; //Opcion 3
+        M3_p2[4] = "8"; //Opcion 4
+        M3_p2[5] = "1"; //Respuesta correcta
         return M3_p2;
     }
 
