@@ -7,6 +7,7 @@ public class SwingVerInicioSesion extends JFrame{
     private JTextField NombreRecibido;
     private JTextField ContrasenaRecibido;
     private JButton BotonGuardar;
+    private JButton BotonIniciarSesion;
 
     public SwingVerInicioSesion(){
         setTitle("Inicio de Sesion");
@@ -45,11 +46,13 @@ public class SwingVerInicioSesion extends JFrame{
         PanelDatos.add(EtiquetaContrasena);
         PanelDatos.add(ContrasenaRecibido);
 
-        BotonGuardar = new JButton("Guardar");
+        BotonGuardar = new JButton("Crear Usuario");
+        BotonIniciarSesion = new JButton("Iniciar Sesion");
 
         PanelPrincipal.add(PanelDatos);
         PanelPrincipal.add(Box.createVerticalStrut(20));
         PanelPrincipal.add(BotonGuardar);
+        PanelPrincipal.add(BotonIniciarSesion);
 
         add(PanelPrincipal);
         pack();
@@ -66,6 +69,10 @@ public class SwingVerInicioSesion extends JFrame{
 
     public void presionarGuardar(ActionListener accion) {
         BotonGuardar.addActionListener(accion);
+    }
+
+    public void presionarIniciarSesion(ActionListener accion) {
+        BotonIniciarSesion.addActionListener(accion);
     }
 
     public void mostrarMensajeExito(String mensaje) {
