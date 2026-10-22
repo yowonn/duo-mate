@@ -19,6 +19,8 @@ public class Progreso {
         if(EstudianteActivo.getIntentosEstudiante() > 0){
             PorcentajeAciertos = (EstudianteActivo.getPuntajeEstudiante() / EstudianteActivo.getIntentosEstudiante())*100;
         }
+        String PorcentajeAciertosString = String.format("%.2f", PorcentajeAciertos);
+        PorcentajeAciertos = Double.parseDouble(PorcentajeAciertosString);
         return PorcentajeAciertos;
     }
 }
