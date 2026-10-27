@@ -1,6 +1,7 @@
 import org.bson.Document;
 
-// Clase solo para probar la conexion. Se puede borrar cuando todo funcione
+//prueba de conexion  
+
 public class PruebaConexion {
     public static void main(String[] args){
         Document Respuesta = ConexionBD.obtenerBase().runCommand(new Document("ping", 1));

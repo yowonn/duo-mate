@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConexionBD {
-    // Archivo con el connection string. Va en la carpeta duo-mate y NO se sube a GitHub
+    
     private static final String ArchivoConfiguracion = "mongo.properties";
     private static final String NombreBase = "duomate";
     private static MongoClient Cliente;
 
-    // Devuelve la base de datos. La conexion se crea una sola vez y se reutiliza
+    
     public static MongoDatabase obtenerBase(){
         if(Cliente == null){
             Cliente = MongoClients.create(leerConnectionString());

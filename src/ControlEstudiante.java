@@ -23,12 +23,22 @@ public class ControlEstudiante {
             SwingVerInicioSesion1.mostrarMensajeError("Debe ingresar una contrasena de al menos 6 caracteres");
         }
         else{
-            if(SwingVerInicioSesion1.confirmarNombre(NombreIngresado)){
-                EstudianteActivo = new Estudiante(NombreIngresado, ContrasenaIngresado);
-                SwingVerInicioSesion1.mostrarMensajeExito("Usuario '"+NombreIngresado+"' creado");
-                SwingVerInicioSesion1.cerrarVentanaInicioDeSesion();
-                ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
-                ControlMenu1.iniciarMenuPrincipal();
+            try{
+                if(BaseEstudiantes.existeEstudiante(NombreIngresado)){
+                    SwingVerInicioSesion1.mostrarMensajeError("El usuario '"+NombreIngresado+"' ya existe. Elija otro nombre o inicie sesion");
+                }
+                else if(SwingVerInicioSesion1.confirmarNombre(NombreIngresado)){
+                    EstudianteActivo = new Estudiante(NombreIngresado, ContrasenaIngresado);
+                    BaseEstudiantes.guardarEstudiante(EstudianteActivo);
+                    SwingVerInicioSesion1.mostrarMensajeExito("Usuario '"+NombreIngresado+"' creado");
+                    SwingVerInicioSesion1.cerrarVentanaInicioDeSesion();
+                    ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
+                    ControlMenu1.iniciarMenuPrincipal();
+                }
+            }
+            catch(RuntimeException e){
+                SwingVerInicioSesion1.mostrarMensajeError("No se pudo conectar con la base de datos. Revise su conexion a internet");
+                e.printStackTrace();
             }
         }
     }
