@@ -134,4 +134,50 @@ public class ModeloPreguntas {
         return M3_p2;
     }
 
+    public String[] Modulo4_Trigonometrica_circulo(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nQue ecuación describe un circulo de radio 1"; //pregunta
+        M4_p1[1] = "x^2 + y^2 = 1"; //Opcion 1
+        M4_p1[2] = "x^2 - y^2 = 0"; //Opcion 2
+        M4_p1[3] = "x^2 - y^2 = 1"; //Opcion 3
+        M4_p1[4] = "x^2 + y^2 = 0"; //Opcion 4
+        M4_p1[5] = "1"; //Respuesta correcta
+        return M4_p1;
+    }
+
+    public String[] Modulo4_Trigonometrica_sin(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nComo se restringe la función y = senθ  para que sea uno a uno"; //pregunta
+        M4_p1[1] = " π/2 ≤ θ ≤ π"; //Opcion 1
+        M4_p1[2] = "0 ≤ θ ≤ π"; //Opcion 2
+        M4_p1[3] = "-π/2 ≤ θ ≤ π/2"; //Opcion 3
+        M4_p1[4] = "-π ≤ θ ≤ π"; //Opcion 4
+        M4_p1[5] = "3"; //Respuesta correcta
+        return M4_p1;
+    }
+
+    public String[] Modulo4_Trigonometrica_cos(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nComo se restringe la función y = cosθ  para que sea uno a uno"; //pregunta
+        M4_p1[1] = " π/2 ≤ θ ≤ π"; //Opcion 1
+        M4_p1[2] = "0 ≤ θ ≤ π"; //Opcion 2
+        M4_p1[3] = "-π/2 ≤ θ ≤ π/2"; //Opcion 3
+        M4_p1[4] = "-π ≤ θ ≤ π"; //Opcion 4
+        M4_p1[5] = "2"; //Respuesta correcta
+        return M4_p1;
+    }
+
+    public String[] Modulo4_Trigonometrica_tan(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nComo se restringe la función y = tanθ  para que sea uno a uno"; //pregunta
+        M4_p1[1] = " π/2 ≤ θ ≤ π"; //Opcion 1
+        M4_p1[2] = "0 ≤ θ ≤ π"; //Opcion 2
+        M4_p1[3] = "-π/2 ≤ θ ≤ π/2"; //Opcion 3
+        M4_p1[4] = "-π ≤ θ ≤ π"; //Opcion 4
+        M4_p1[5] = "3"; //Respuesta correcta
+        return M4_p1;
+    }
+
+
+
 }
