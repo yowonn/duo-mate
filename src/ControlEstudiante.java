@@ -6,6 +6,7 @@ public class ControlEstudiante {
         this.EstudianteActivo = null;
         this.SwingVerInicioSesion1 = new SwingVerInicioSesion();
         SwingVerInicioSesion1.presionarGuardar(e-> registroEstudianteSwing());
+        SwingVerInicioSesion1.presionarIniciarSesion(e-> abrirSesionEstudianteSwing());
     }
 
     public void registroEstudianteSwing(){
@@ -30,6 +31,11 @@ public class ControlEstudiante {
                 ControlMenu1.iniciarMenuPrincipal();
             }
         }
+    }
+
+    public void abrirSesionEstudianteSwing(){
+
+        //Aqui va el codigo para que el usuario pueda abrir sesion
     }
 
     public void iniciarInicioSesion(){

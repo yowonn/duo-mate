@@ -53,7 +53,7 @@ public class ModeloPreguntas {
         M2_p2[2] = "\nD = R - {5}"; //Opcion 2
         M2_p2[3] = "\nD = 5x -2"; //Opcion 3
         M2_p2[4] = "\nD = R - {0}"; //Opcion 4
-        M2_p2[5] = "\nD = R - {0}"; //Respuesta correcta
+        M2_p2[5] = "4"; //Respuesta correcta
         return M2_p2;
     }
 
@@ -64,7 +64,18 @@ public class ModeloPreguntas {
         M2_p2[2] = "\nRango: [-14, +∞) "; //Opcion 2
         M2_p2[3] = "\nRango: [-14, +∞]"; //Opcion 3
         M2_p2[4] = "\nRango: [-14, +∞]"; //Opcion 4
-        M2_p2[5] = "\nRango: [-14, +∞)"; //Respuesta correcta
+        M2_p2[5] = "2"; //Respuesta correcta
+        return M2_p2;
+    }
+
+    public String[] Modulo2_Asintota_f(){
+        String[] M2_p2 = new String[6];
+        M2_p2[0] = "\n¿Cual es la asintota vertical de la funcion?: \nf(x) = 1/x-2"; //Pregunta: Rango de la función
+        M2_p2[1] = "\nx = 2"; //Opcion 1
+        M2_p2[2] = "\nx = -2"; //Opcion 2
+        M2_p2[3] = "\nx = 0"; //Opcion 3
+        M2_p2[4] = "\nx = 1"; //Opcion 4
+        M2_p2[5] = "1"; //Respuesta correcta
         return M2_p2;
     }
 
@@ -75,7 +86,7 @@ public class ModeloPreguntas {
         M3_p2[2] = "\ny = -3"; //Opcion 2
         M3_p2[3] = "\ny = 3"; //Opcion 3
         M3_p2[4] = "\ny = -3i"; //Opcion 4
-        M3_p2[5] = "\ny = 3i"; //Respuesta correcta
+        M3_p2[5] = "1"; //Respuesta correcta
         return M3_p2;
     }
 
@@ -86,7 +97,7 @@ public class ModeloPreguntas {
         M2_p2[2] = "\n20-2x"; //Opcion 2
         M2_p2[3] = "\ne^(2x)"; //Opcion 3
         M2_p2[4] = "\n2x+20"; //Opcion 4
-        M2_p2[5] = "\n2x+20"; //Respuesta correcta
+        M2_p2[5] = "4"; //Respuesta correcta
         return M2_p2;
     }
 
@@ -97,7 +108,7 @@ public class ModeloPreguntas {
         M3_p2[2] = "\nD: (0,∞) ; R: (-∞, ∞)"; //Opcion 2
         M3_p2[3] = "\nD: [0,∞) ; R: [-∞, ∞]"; //Opcion 3
         M3_p2[4] = "\nD: (1,∞) ; R: (-∞, ∞)"; //Opcion 4
-        M3_p2[5] = "\ny = 3i"; //Respuesta correcta
+        M3_p2[5] = "2"; //Respuesta correcta
         return M3_p2;
     }
 
@@ -108,8 +119,65 @@ public class ModeloPreguntas {
         M3_p2[2] = "\nT = A + B * e^(-kt)"; //Opcion 2
         M3_p2[3] = "\nA = p * e^(rt)"; //Opcion 3
         M3_p2[4] = "\nA = p * (1-r/n)^(n*t)"; //Opcion 4
-        M3_p2[5] = "\nA = p * e^(rt)"; //Respuesta correcta
+        M3_p2[5] = "3"; //Respuesta correcta
         return M3_p2;
     }
+
+    public String[] Modulo3_Exponencial(){
+        String[] M3_p2 = new String[6];
+        M3_p2[0] = "\nEvalue f(2) si f(x)=3^x"; //pregunta
+        M3_p2[1] = "9"; //Opcion 1
+        M3_p2[2] = "6"; //Opcion 2
+        M3_p2[3] = "27"; //Opcion 3
+        M3_p2[4] = "8"; //Opcion 4
+        M3_p2[5] = "1"; //Respuesta correcta
+        return M3_p2;
+    }
+
+    public String[] Modulo4_Trigonometrica_circulo(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nQue ecuación describe un circulo de radio 1"; //pregunta
+        M4_p1[1] = "x^2 + y^2 = 1"; //Opcion 1
+        M4_p1[2] = "x^2 - y^2 = 0"; //Opcion 2
+        M4_p1[3] = "x^2 - y^2 = 1"; //Opcion 3
+        M4_p1[4] = "x^2 + y^2 = 0"; //Opcion 4
+        M4_p1[5] = "1"; //Respuesta correcta
+        return M4_p1;
+    }
+
+    public String[] Modulo4_Trigonometrica_sin(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nComo se restringe la función y = senθ  para que sea uno a uno"; //pregunta
+        M4_p1[1] = " π/2 ≤ θ ≤ π"; //Opcion 1
+        M4_p1[2] = "0 ≤ θ ≤ π"; //Opcion 2
+        M4_p1[3] = "-π/2 ≤ θ ≤ π/2"; //Opcion 3
+        M4_p1[4] = "-π ≤ θ ≤ π"; //Opcion 4
+        M4_p1[5] = "3"; //Respuesta correcta
+        return M4_p1;
+    }
+
+    public String[] Modulo4_Trigonometrica_cos(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nComo se restringe la función y = cosθ  para que sea uno a uno"; //pregunta
+        M4_p1[1] = " π/2 ≤ θ ≤ π"; //Opcion 1
+        M4_p1[2] = "0 ≤ θ ≤ π"; //Opcion 2
+        M4_p1[3] = "-π/2 ≤ θ ≤ π/2"; //Opcion 3
+        M4_p1[4] = "-π ≤ θ ≤ π"; //Opcion 4
+        M4_p1[5] = "2"; //Respuesta correcta
+        return M4_p1;
+    }
+
+    public String[] Modulo4_Trigonometrica_tan(){
+        String[] M4_p1 = new String[6];
+        M4_p1[0] = "\nComo se restringe la función y = tanθ  para que sea uno a uno"; //pregunta
+        M4_p1[1] = " π/2 ≤ θ ≤ π"; //Opcion 1
+        M4_p1[2] = "0 ≤ θ ≤ π"; //Opcion 2
+        M4_p1[3] = "-π/2 ≤ θ ≤ π/2"; //Opcion 3
+        M4_p1[4] = "-π ≤ θ ≤ π"; //Opcion 4
+        M4_p1[5] = "3"; //Respuesta correcta
+        return M4_p1;
+    }
+
+
 
 }
