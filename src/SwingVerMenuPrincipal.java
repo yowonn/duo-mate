@@ -9,6 +9,7 @@ public class SwingVerMenuPrincipal extends JFrame{
     private JButton BotonTema1;
     private JButton BotonTema2;
     private JButton BotonTema3;
+    private JButton BotonTema4;
 
     public SwingVerMenuPrincipal(){
         setTitle("Menu Principal");
@@ -77,6 +78,12 @@ public class SwingVerMenuPrincipal extends JFrame{
         BotonTema3.setBackground(new Color(52, 70, 82));
         BotonTema3.setForeground(Color.WHITE);
         BotonTema3.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
+        BotonTema4 = new JButton("Tema 4");
+        DisenoMenuPrincipal.disenarBoton(BotonTema4);
+        BotonTema4.setBackground(new Color(52, 70, 82));
+        BotonTema4.setForeground(Color.WHITE);
+        BotonTema4.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         PanelBotonesTemas.add(TituloTema1);
         PanelBotonesTemas.add(Box.createVerticalStrut(15));
@@ -85,6 +92,7 @@ public class SwingVerMenuPrincipal extends JFrame{
         PanelBotonesTemas.add(BotonTema1);
         PanelBotonesTemas.add(BotonTema2);
         PanelBotonesTemas.add(BotonTema3);
+        PanelBotonesTemas.add(BotonTema4);
 
         PanelPrincipal.add(PanelBotonesGeneral);
         PanelPrincipal.add(Box.createVerticalStrut(50));
@@ -121,6 +129,9 @@ public class SwingVerMenuPrincipal extends JFrame{
     }
     public void presionarTema3(ActionListener accion) {
         BotonTema3.addActionListener(accion);
+    }
+    public void presionarTema4(ActionListener accion) {
+        BotonTema4.addActionListener(accion);
     }
 
     public void cerrarVentanaMenuPrincipal(){
