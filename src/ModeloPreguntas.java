@@ -19,7 +19,7 @@ public class ModeloPreguntas {
         M1_p2[1] = "\n56/2"; //Opcion 1
         M1_p2[2] = "\n(56)(√2)/√(2)"; //Opcion 2
         M1_p2[3] = "\n(a^2)(a + b - 1)"; //Opcion 3
-        M1_p2[4] = "\n(28)(√2)/2"; //Opcion 4
+        M1_p2[4] = "\n(28)(√2)"; //Opcion 4
         M1_p2[5] = "4"; //Respuesta correcta
         return M1_p2;
     }
@@ -70,7 +70,7 @@ public class ModeloPreguntas {
 
     public String[] Modulo2_Asintota_f(){
         String[] M2_p2 = new String[6];
-        M2_p2[0] = "\n¿Cual es la asintota vertical de la funcion?: \nf(x) = 1/x-2"; //Pregunta: Rango de la función
+        M2_p2[0] = "\n¿Cual es la asintota vertical de la funcion?: \nf(x) = 1/(x-2)"; //Pregunta: Rango de la función
         M2_p2[1] = "\nx = 2"; //Opcion 1
         M2_p2[2] = "\nx = -2"; //Opcion 2
         M2_p2[3] = "\nx = 0"; //Opcion 3
