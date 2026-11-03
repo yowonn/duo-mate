@@ -18,8 +18,8 @@ public class ModeloPreguntas {
         M1_p2[0] = "\nRacionalizar: \n56/√(2)"; //Pregunta
         M1_p2[1] = "\n56/2"; //Opcion 1
         M1_p2[2] = "\n(56)(√2)/√(2)"; //Opcion 2
-        M1_p2[3] = "\n(a^2)(a + b - 1)"; //Opcion 3
-        M1_p2[4] = "\n(28)(√2)/2"; //Opcion 4
+        M1_p2[3] = "\n(56)(√2)"; //Opcion 3
+        M1_p2[4] = "\n(28)(√2)"; //Opcion 4
         M1_p2[5] = "4"; //Respuesta correcta
         return M1_p2;
     }
