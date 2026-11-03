@@ -18,17 +18,17 @@ public class SwingVerMenuPrincipal extends JFrame {
         setTitle("Duo-Mate - Menu Principal");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
-        
+
         JPanel PanelPrincipal = new JPanel(new GridBagLayout());
         PanelPrincipal.setBackground(DisenoMenuPrincipal.fondo);
         PanelPrincipal.setBorder(new EmptyBorder(25, 25, 25, 25));
 
-        
+
         JPanel Contenedor = new JPanel(new BorderLayout(0, 25));
         Contenedor.setBackground(DisenoMenuPrincipal.fondo);
         Contenedor.setPreferredSize(new Dimension(950, 680));
 
-        
+    
         JPanel PanelEncabezado = new JPanel(new BorderLayout(15, 0));
         PanelEncabezado.setBackground(DisenoMenuPrincipal.oscuro);
         PanelEncabezado.setBorder(new EmptyBorder(15, 15, 15, 15));
@@ -56,14 +56,15 @@ public class SwingVerMenuPrincipal extends JFrame {
         );
         PanelContenido.setBackground(DisenoMenuPrincipal.fondo);
 
-        
+
         JLabel TituloTemas = new JLabel("Temas disponibles");
         DisenoMenuPrincipal.disenarTitulo(TituloTemas);
 
-        JLabel Subtitulo = new JLabel("Selecciona un tema para comenzar");
+        JLabel Subtitulo = new JLabel(
+            "Selecciona un tema para comenzar"
+        );
         DisenoMenuPrincipal.disenarTexto(Subtitulo);
 
-        
         JPanel PanelTitulos = new JPanel();
         PanelTitulos.setLayout(
             new BoxLayout(PanelTitulos, BoxLayout.Y_AXIS)
@@ -82,7 +83,9 @@ public class SwingVerMenuPrincipal extends JFrame {
         PanelContenido.add(Box.createVerticalStrut(20));
 
         
-        JPanel PanelTemas = new JPanel(new GridLayout(2, 2, 20, 20));
+        JPanel PanelTemas = new JPanel(
+            new GridLayout(2, 2, 20, 20)
+        );
         PanelTemas.setBackground(DisenoMenuPrincipal.fondo);
         PanelTemas.setPreferredSize(new Dimension(950, 500));
 
@@ -119,7 +122,6 @@ public class SwingVerMenuPrincipal extends JFrame {
             BotonTema4
         ));
 
-        
         JPanel PanelCentro = new JPanel(new GridBagLayout());
         PanelCentro.setBackground(DisenoMenuPrincipal.fondo);
         PanelCentro.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -128,7 +130,6 @@ public class SwingVerMenuPrincipal extends JFrame {
 
         PanelContenido.add(PanelCentro);
 
-        
         Contenedor.add(PanelEncabezado, BorderLayout.NORTH);
         Contenedor.add(PanelContenido, BorderLayout.CENTER);
 
@@ -141,7 +142,6 @@ public class SwingVerMenuPrincipal extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    
     private JPanel crearTema(String numero, String nombre,
                              String descripcion, JButton boton) {
 
@@ -182,7 +182,6 @@ public class SwingVerMenuPrincipal extends JFrame {
         return Tarjeta;
     }
 
-    
     public void presionarCerrarSesion(ActionListener accion) {
         BotonCerrarSesion.addActionListener(accion);
     }
@@ -208,36 +207,13 @@ public class SwingVerMenuPrincipal extends JFrame {
         BotonTema4.addActionListener(accion);
     }
 
-    
     public boolean confirmarCerrarSesion() {
-
-        JPanel PanelMensaje = new JPanel(new BorderLayout());
-        PanelMensaje.setBackground(DisenoMenuPrincipal.crema);
-        PanelMensaje.setBorder(new EmptyBorder(15, 20, 15, 20));
-
-        JLabel Mensaje = new JLabel(
-            "¿Estas seguro de que deseas cerrar sesion?"
-        );
-
-        DisenoMenuPrincipal.disenarTexto(Mensaje);
-        PanelMensaje.add(Mensaje, BorderLayout.CENTER);
-
-        Object[] Opciones = {"Cancelar", "Cerrar sesion"};
-
-        int Respuesta = JOptionPane.showOptionDialog(
+        return DisenoMensajes.confirmar(
             this,
-            PanelMensaje,
-            "Duo-Mate - Cerrar sesion",
-            JOptionPane.DEFAULT_OPTION,
-            JOptionPane.PLAIN_MESSAGE,
-            null,
-            Opciones,
-            Opciones[0]
+            "Cerrar sesión",
+            "¿Estás seguro de que deseas cerrar sesión?"
         );
-
-        return Respuesta == 1;
     }
-
 
     public void cerrarVentanaMenuPrincipal() {
         dispose();
@@ -250,18 +226,15 @@ public class SwingVerMenuPrincipal extends JFrame {
     }
 
     public boolean confirmarCerrarPrograma() {
-
-        int Respuesta = JOptionPane.showConfirmDialog(
+        return DisenoMensajes.confirmar(
             this,
-            "Su progreso no sera guardado.\n"
-            + "Para guardar su progreso utilice Cerrar sesion.\n"
-            + "¿Esta seguro de que desea salir?",
-            "Confirmar salida",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.WARNING_MESSAGE
-        );
 
-        return Respuesta == JOptionPane.YES_OPTION;
+            "Confirmar salida",
+            "Tu progreso podría no guardarse.\n"
+            + "Para conservarlo, utiliza Cerrar sesión.\n"
+            + "¿Estás seguro de que deseas salir?"
+        );
+        
     }
 
 }

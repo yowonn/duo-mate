@@ -22,17 +22,23 @@ public class SwingVerInicioSesion extends JFrame {
         PanelPrincipal.setBackground(DisenoInicioSesion.fondo);
         PanelPrincipal.setBorder(new EmptyBorder(25, 25, 25, 25));
 
-
+        
         JPanel Contenedor = new JPanel();
-        Contenedor.setLayout(new BoxLayout(Contenedor, BoxLayout.Y_AXIS));
+        Contenedor.setLayout(
+            new BoxLayout(Contenedor, BoxLayout.Y_AXIS)
+        );
         Contenedor.setBackground(DisenoInicioSesion.fondo);
         Contenedor.setPreferredSize(new Dimension(450, 650));
 
-    
+        // Encabezado
         JPanel PanelEncabezado = new JPanel();
-        PanelEncabezado.setLayout(new BoxLayout(PanelEncabezado, BoxLayout.Y_AXIS));
+        PanelEncabezado.setLayout(
+            new BoxLayout(PanelEncabezado, BoxLayout.Y_AXIS)
+        );
         PanelEncabezado.setBackground(DisenoInicioSesion.oscuro);
-        PanelEncabezado.setBorder(new EmptyBorder(20, 20, 20, 20));
+        PanelEncabezado.setBorder(
+            new EmptyBorder(20, 20, 20, 20)
+        );
         PanelEncabezado.setAlignmentX(Component.CENTER_ALIGNMENT);
         PanelEncabezado.setMaximumSize(new Dimension(450, 110));
 
@@ -41,7 +47,9 @@ public class SwingVerInicioSesion extends JFrame {
         NombrePrograma.setForeground(Color.WHITE);
         NombrePrograma.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel Subtitulo = new JLabel("Aprende matematicas a tu ritmo");
+        JLabel Subtitulo = new JLabel(
+            "Aprende matematicas a tu ritmo"
+        );
         Subtitulo.setFont(new Font("Arial", Font.PLAIN, 14));
         Subtitulo.setForeground(Color.WHITE);
         Subtitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -50,22 +58,28 @@ public class SwingVerInicioSesion extends JFrame {
         PanelEncabezado.add(Box.createVerticalStrut(8));
         PanelEncabezado.add(Subtitulo);
 
-
+        // Formulario
         JPanel PanelFormulario = new JPanel();
-        PanelFormulario.setLayout(new BoxLayout(PanelFormulario, BoxLayout.Y_AXIS));
+        PanelFormulario.setLayout(
+            new BoxLayout(PanelFormulario, BoxLayout.Y_AXIS)
+        );
         PanelFormulario.setBackground(DisenoInicioSesion.crema);
-        PanelFormulario.setBorder(new EmptyBorder(25, 40, 25, 40));
+        PanelFormulario.setBorder(
+            new EmptyBorder(25, 40, 25, 40)
+        );
         PanelFormulario.setAlignmentX(Component.CENTER_ALIGNMENT);
         PanelFormulario.setMaximumSize(new Dimension(450, 510));
 
         JLabel Bienvenida = new JLabel("¡Bienvenido!");
         DisenoInicioSesion.disenarTitulo(Bienvenida);
 
-        JLabel Instrucciones = new JLabel("Ingresa tus datos para comenzar");
+        JLabel Instrucciones = new JLabel(
+            "Ingresa tus datos para comenzar"
+        );
         DisenoInicioSesion.disenarTexto(Instrucciones);
         Instrucciones.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
+        // Nombre
         JLabel EtiquetaNombre = new JLabel("Nombre de usuario:");
         DisenoInicioSesion.disenarTexto(EtiquetaNombre);
         EtiquetaNombre.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -75,7 +89,7 @@ public class SwingVerInicioSesion extends JFrame {
         NombreRecibido.setMaximumSize(new Dimension(350, 40));
         NombreRecibido.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
+        // Contraseña
         JLabel EtiquetaContrasena = new JLabel("Contraseña:");
         DisenoInicioSesion.disenarTexto(EtiquetaContrasena);
         EtiquetaContrasena.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -87,12 +101,14 @@ public class SwingVerInicioSesion extends JFrame {
 
         char caracterOriginal = ContrasenaRecibido.getEchoChar();
 
-        JLabel Indicacion = new JLabel("Mínimo 6 caracteres para registrarte");
+        JLabel Indicacion = new JLabel(
+            "Mínimo 6 caracteres para registrarte"
+        );
         Indicacion.setFont(new Font("Arial", Font.PLAIN, 12));
         Indicacion.setForeground(DisenoInicioSesion.oscuro);
         Indicacion.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Mostrar contraseña
+
         MostrarContrasena = new JCheckBox("Mostrar contraseña");
         MostrarContrasena.setBackground(DisenoInicioSesion.crema);
         MostrarContrasena.setForeground(DisenoInicioSesion.oscuro);
@@ -120,7 +136,7 @@ public class SwingVerInicioSesion extends JFrame {
         BotonGuardar.setAlignmentX(Component.CENTER_ALIGNMENT);
         BotonIniciarSesion.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        
+        // Organizar formulario
         PanelFormulario.add(Bienvenida);
         PanelFormulario.add(Box.createVerticalStrut(10));
         PanelFormulario.add(Instrucciones);
@@ -173,29 +189,23 @@ public class SwingVerInicioSesion extends JFrame {
     }
 
     public void mostrarMensajeExito(String mensaje) {
-        JOptionPane.showMessageDialog(
-            this, mensaje, "Exito",
-            JOptionPane.INFORMATION_MESSAGE
+        DisenoMensajes.mostrarMensaje(
+            this, "¡Éxito!", mensaje, true
         );
     }
 
     public void mostrarMensajeError(String mensaje) {
-        JOptionPane.showMessageDialog(
-            this, mensaje, "Error",
-            JOptionPane.ERROR_MESSAGE
+        DisenoMensajes.mostrarMensaje(
+            this, "¡Atención!", mensaje, false
         );
     }
 
     public boolean confirmarNombre(String nombre) {
-        int respuesta = JOptionPane.showConfirmDialog(
+        return DisenoMensajes.confirmar(
             this,
-            "¿El nombre \"" + nombre + "\" es correcto?",
-            "Confirmar nombre",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE
+            "Confirmar usuario",
+            "¿El nombre \"" + nombre + "\" es correcto?"
         );
-
-        return respuesta == JOptionPane.YES_OPTION;
     }
 
     public void cerrarVentanaInicioDeSesion() {
