@@ -1,9 +1,11 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import javax.swing.border.EmptyBorder;
 
-public class SwingVerMenuPrincipal extends JFrame{
+public class SwingVerMenuPrincipal extends JFrame {
+
     private JButton BotonCerrarSesion;
     private JButton BotonProgreso;
     private JButton BotonTema1;
@@ -11,148 +13,255 @@ public class SwingVerMenuPrincipal extends JFrame{
     private JButton BotonTema3;
     private JButton BotonTema4;
 
-    public SwingVerMenuPrincipal(){
-        setTitle("Menu Principal");
+    public SwingVerMenuPrincipal() {
+
+        setTitle("Duo-Mate - Menu Principal");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
-        JPanel PanelPrincipal = new JPanel();
-        PanelPrincipal.setLayout(new BoxLayout(PanelPrincipal, BoxLayout.Y_AXIS));
-        PanelPrincipal.setBorder(new EmptyBorder(25, 35, 25, 35));
-        DisenoMenuPrincipal.disenarPanel(PanelPrincipal);
-
-        JPanel PanelBotonesGeneral = new JPanel(new BorderLayout(20, 0));
-        PanelBotonesGeneral.setBackground(new Color(52, 70, 82));
-
-        BotonCerrarSesion = new JButton("Cerrar sesion");
-        BotonProgreso = new JButton("Progreso");
-        DisenoMenuPrincipal.disenarBoton(BotonCerrarSesion);
-        DisenoMenuPrincipal.disenarBoton(BotonProgreso);
-
-        JLabel BienvenidaMenu = new JLabel("DUO-MATE");
-        BienvenidaMenu.setHorizontalAlignment(SwingConstants.CENTER);
-        BienvenidaMenu.setForeground(Color.WHITE);
-        BienvenidaMenu.setFont(new Font("Arial", Font.BOLD, 22));
-
-        PanelBotonesGeneral.add(BotonProgreso, BorderLayout.WEST);
-        PanelBotonesGeneral.add(BienvenidaMenu, BorderLayout.CENTER);
-        PanelBotonesGeneral.add(BotonCerrarSesion, BorderLayout.EAST);
-        PanelBotonesGeneral.setMaximumSize(new Dimension(700, 65));
-
-        JPanel PanelTemas = new JPanel();
-        PanelTemas.setLayout(new BoxLayout(PanelTemas, BoxLayout.Y_AXIS));
-        DisenoMenuPrincipal.disenarPanel(PanelTemas);
-
-        JLabel TextoTituloTemas = new JLabel("Temas disponibles");
-        JLabel TextoTemasDisponibles = new JLabel("Selecciona un tema para comenzar");
-        DisenoMenuPrincipal.disenarTitulo(TextoTituloTemas);
-        DisenoMenuPrincipal.disenarTexto(TextoTemasDisponibles);
-
-        PanelTemas.add(TextoTituloTemas);
-        PanelTemas.add(Box.createVerticalStrut(15));
-        PanelTemas.add(TextoTemasDisponibles);
-
-        JPanel PanelBotonesTemas = new JPanel();
-        PanelBotonesTemas.setLayout(new BoxLayout(PanelBotonesTemas, BoxLayout.Y_AXIS));
-        PanelBotonesTemas.setBackground(new Color(255, 246, 221));
-        PanelBotonesTemas.setBorder(new EmptyBorder(25, 70, 25, 70));
-
-        JLabel TituloTema1 = new JLabel("Tema 1");
-        JLabel NombreTema1 = new JLabel("Factorizacion");
-        DisenoMenuPrincipal.disenarTitulo(TituloTema1);
-        DisenoMenuPrincipal.disenarTexto(NombreTema1);
-
-        BotonTema1 = new JButton("Comenzar");
-        DisenoMenuPrincipal.disenarBoton(BotonTema1);
-        BotonTema1.setBackground(new Color(52, 70, 82));
-        BotonTema1.setForeground(Color.WHITE);
-        BotonTema1.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        BotonTema2 = new JButton("Tema 2");
-        DisenoMenuPrincipal.disenarBoton(BotonTema2);
-        BotonTema2.setBackground(new Color(52, 70, 82));
-        BotonTema2.setForeground(Color.WHITE);
-        BotonTema2.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        BotonTema3 = new JButton("Tema 3");
-        DisenoMenuPrincipal.disenarBoton(BotonTema3);
-        BotonTema3.setBackground(new Color(52, 70, 82));
-        BotonTema3.setForeground(Color.WHITE);
-        BotonTema3.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-        BotonTema4 = new JButton("Tema 4");
-        DisenoMenuPrincipal.disenarBoton(BotonTema4);
-        BotonTema4.setBackground(new Color(52, 70, 82));
-        BotonTema4.setForeground(Color.WHITE);
-        BotonTema4.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JPanel PanelPrincipal = new JPanel(new GridBagLayout());
+        PanelPrincipal.setBackground(DisenoMenuPrincipal.fondo);
+        PanelPrincipal.setBorder(new EmptyBorder(25, 25, 25, 25));
 
-        PanelBotonesTemas.add(TituloTema1);
-        PanelBotonesTemas.add(Box.createVerticalStrut(15));
-        PanelBotonesTemas.add(NombreTema1);
-        PanelBotonesTemas.add(Box.createVerticalStrut(25));
-        PanelBotonesTemas.add(BotonTema1);
-        PanelBotonesTemas.add(BotonTema2);
-        PanelBotonesTemas.add(BotonTema3);
-        PanelBotonesTemas.add(BotonTema4);
+        
+        JPanel Contenedor = new JPanel(new BorderLayout(0, 25));
+        Contenedor.setBackground(DisenoMenuPrincipal.fondo);
+        Contenedor.setPreferredSize(new Dimension(950, 680));
 
-        PanelPrincipal.add(PanelBotonesGeneral);
-        PanelPrincipal.add(Box.createVerticalStrut(50));
-        PanelPrincipal.add(PanelTemas);
-        PanelPrincipal.add(Box.createVerticalStrut(35));
-        PanelPrincipal.add(PanelBotonesTemas);
+        
+        JPanel PanelEncabezado = new JPanel(new BorderLayout(15, 0));
+        PanelEncabezado.setBackground(DisenoMenuPrincipal.oscuro);
+        PanelEncabezado.setBorder(new EmptyBorder(15, 15, 15, 15));
+        PanelEncabezado.setPreferredSize(new Dimension(950, 85));
+
+        BotonProgreso = new JButton("Progreso");
+        BotonCerrarSesion = new JButton("Cerrar sesion");
+
+        DisenoMenuPrincipal.disenarBoton(BotonProgreso);
+        DisenoMenuPrincipal.disenarBoton(BotonCerrarSesion);
+
+
+        JLabel Titulo = new JLabel("DUO-MATE", SwingConstants.CENTER);
+        Titulo.setFont(new Font("Arial", Font.BOLD, 25));
+        Titulo.setForeground(Color.WHITE);
+
+        PanelEncabezado.add(BotonProgreso, BorderLayout.WEST);
+        PanelEncabezado.add(Titulo, BorderLayout.CENTER);
+        PanelEncabezado.add(BotonCerrarSesion, BorderLayout.EAST);
+
+        
+        JPanel PanelContenido = new JPanel();
+        PanelContenido.setLayout(
+            new BoxLayout(PanelContenido, BoxLayout.Y_AXIS)
+        );
+        PanelContenido.setBackground(DisenoMenuPrincipal.fondo);
+
+        
+        JLabel TituloTemas = new JLabel("Temas disponibles");
+        DisenoMenuPrincipal.disenarTitulo(TituloTemas);
+
+        JLabel Subtitulo = new JLabel("Selecciona un tema para comenzar");
+        DisenoMenuPrincipal.disenarTexto(Subtitulo);
+
+        
+        JPanel PanelTitulos = new JPanel();
+        PanelTitulos.setLayout(
+            new BoxLayout(PanelTitulos, BoxLayout.Y_AXIS)
+        );
+        PanelTitulos.setBackground(DisenoMenuPrincipal.fondo);
+        PanelTitulos.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        TituloTemas.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Subtitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        PanelTitulos.add(TituloTemas);
+        PanelTitulos.add(Box.createVerticalStrut(10));
+        PanelTitulos.add(Subtitulo);
+
+        PanelContenido.add(PanelTitulos);
+        PanelContenido.add(Box.createVerticalStrut(20));
+
+        
+        JPanel PanelTemas = new JPanel(new GridLayout(2, 2, 20, 20));
+        PanelTemas.setBackground(DisenoMenuPrincipal.fondo);
+        PanelTemas.setPreferredSize(new Dimension(950, 500));
+
+        BotonTema1 = new JButton("Comenzar Tema 1");
+        BotonTema2 = new JButton("Comenzar Tema 2");
+        BotonTema3 = new JButton("Comenzar Tema 3");
+        BotonTema4 = new JButton("Comenzar Tema 4");
+
+        PanelTemas.add(crearTema(
+            "Tema 1",
+            "Algebra basica",
+            "Factorizacion, racionalizacion, rectas y transformaciones",
+            BotonTema1
+        ));
+
+        PanelTemas.add(crearTema(
+            "Tema 2",
+            "Funciones",
+            "Dominio, rango, asintotas y numeros imaginarios",
+            BotonTema2
+        ));
+
+        PanelTemas.add(crearTema(
+            "Tema 3",
+            "Logaritmos y exponenciales",
+            "Logaritmos, exponenciales e interes compuesto",
+            BotonTema3
+        ));
+
+        PanelTemas.add(crearTema(
+            "Tema 4",
+            "Trigonometria",
+            "Circunferencia, seno, coseno y tangente",
+            BotonTema4
+        ));
+
+        
+        JPanel PanelCentro = new JPanel(new GridBagLayout());
+        PanelCentro.setBackground(DisenoMenuPrincipal.fondo);
+        PanelCentro.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        PanelCentro.add(PanelTemas);
+
+        PanelContenido.add(PanelCentro);
+
+        
+        Contenedor.add(PanelEncabezado, BorderLayout.NORTH);
+        Contenedor.add(PanelContenido, BorderLayout.CENTER);
+
+        PanelPrincipal.add(Contenedor);
 
         add(PanelPrincipal);
-        pack();
+
+        setSize(1100, 850);
+        setMinimumSize(new Dimension(1050, 820));
         setLocationRelativeTo(null);
     }
 
+    
+    private JPanel crearTema(String numero, String nombre,
+                             String descripcion, JButton boton) {
+
+        JPanel Tarjeta = DisenoMenuPrincipal.crearTarjeta();
+
+        Tarjeta.setLayout(
+            new BoxLayout(Tarjeta, BoxLayout.Y_AXIS)
+        );
+
+        JLabel TituloTema = new JLabel(numero);
+        DisenoMenuPrincipal.disenarTitulo(TituloTema);
+        TituloTema.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JLabel NombreTema = new JLabel(nombre);
+        DisenoMenuPrincipal.disenarTexto(NombreTema);
+        NombreTema.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JLabel Descripcion = new JLabel(
+            "<html><div style='text-align:center; width:230px;'>"
+            + descripcion + "</div></html>"
+        );
+
+        Descripcion.setForeground(DisenoMenuPrincipal.oscuro);
+        Descripcion.setFont(new Font("Arial", Font.PLAIN, 14));
+        Descripcion.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        DisenoMenuPrincipal.disenarBoton(boton);
+        boton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        Tarjeta.add(TituloTema);
+        Tarjeta.add(Box.createVerticalStrut(10));
+        Tarjeta.add(NombreTema);
+        Tarjeta.add(Box.createVerticalStrut(15));
+        Tarjeta.add(Descripcion);
+        Tarjeta.add(Box.createVerticalGlue());
+        Tarjeta.add(boton);
+
+        return Tarjeta;
+    }
+
+    
     public void presionarCerrarSesion(ActionListener accion) {
         BotonCerrarSesion.addActionListener(accion);
     }
-    public boolean confirmarCerrarSesion() {
-        int respuesta = JOptionPane.showConfirmDialog(
-            this,
-            "¿Esta seguro de cerrar sesion?",
-            "Confirmar cerrar sesion",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE);
-        return respuesta == JOptionPane.YES_OPTION;
-    }
+
 
     public void presionarProgreso(ActionListener accion) {
         BotonProgreso.addActionListener(accion);
     }
+
     public void presionarTema1(ActionListener accion) {
         BotonTema1.addActionListener(accion);
     }
+
     public void presionarTema2(ActionListener accion) {
         BotonTema2.addActionListener(accion);
     }
+
     public void presionarTema3(ActionListener accion) {
         BotonTema3.addActionListener(accion);
     }
+
     public void presionarTema4(ActionListener accion) {
         BotonTema4.addActionListener(accion);
     }
 
-    public void cerrarVentanaMenuPrincipal(){
+    
+    public boolean confirmarCerrarSesion() {
+
+        JPanel PanelMensaje = new JPanel(new BorderLayout());
+        PanelMensaje.setBackground(DisenoMenuPrincipal.crema);
+        PanelMensaje.setBorder(new EmptyBorder(15, 20, 15, 20));
+
+        JLabel Mensaje = new JLabel(
+            "¿Estas seguro de que deseas cerrar sesion?"
+        );
+
+        DisenoMenuPrincipal.disenarTexto(Mensaje);
+        PanelMensaje.add(Mensaje, BorderLayout.CENTER);
+
+        Object[] Opciones = {"Cancelar", "Cerrar sesion"};
+
+        int Respuesta = JOptionPane.showOptionDialog(
+            this,
+            PanelMensaje,
+            "Duo-Mate - Cerrar sesion",
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE,
+            null,
+            Opciones,
+            Opciones[0]
+        );
+
+        return Respuesta == 1;
+    }
+
+
+    public void cerrarVentanaMenuPrincipal() {
         dispose();
     }
 
-    public void presionarCerrarPrograma(java.awt.event.WindowListener accion) {
+    public void presionarCerrarPrograma(
+        java.awt.event.WindowListener accion
+    ) {
         addWindowListener(accion);
     }
 
     public boolean confirmarCerrarPrograma() {
-        int respuesta = JOptionPane.showConfirmDialog(
+
+        int Respuesta = JOptionPane.showConfirmDialog(
             this,
-            "Su progreso no será guardado.\nPara guardar su progreso haga click en Cerrar Sesion en el Menu Principal"+
-            "\n¿Está seguro de que desea salir?",
+            "Su progreso no sera guardado.\n"
+            + "Para guardar su progreso utilice Cerrar sesion.\n"
+            + "¿Esta seguro de que desea salir?",
             "Confirmar salida",
             JOptionPane.YES_NO_OPTION,
             JOptionPane.WARNING_MESSAGE
         );
 
-        return respuesta == JOptionPane.YES_OPTION;
+        return Respuesta == JOptionPane.YES_OPTION;
     }
 
 }

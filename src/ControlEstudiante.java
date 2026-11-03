@@ -45,10 +45,52 @@ public class ControlEstudiante {
 
     public void abrirSesionEstudianteSwing(){
 
-        //Aqui va el codigo para que el usuario pueda abrir sesion
+        String nombre = SwingVerInicioSesion1.obtenerNombre();
+        String contrasena = SwingVerInicioSesion1.obtenerContrasena();
+
+        if(nombre.isBlank()) {
+            SwingVerInicioSesion1.mostrarMensajeError(
+                "Debe ingresar su nombre de usuario"
+            );
+            return;
+        }
+
+        if(contrasena.isBlank()) {
+            SwingVerInicioSesion1.mostrarMensajeError(
+                "Debe ingresar su contrasena"
+            );
+            return;
+        }
+
+        try {
+            Estudiante estudiante = BaseEstudiantes.iniciarSesion(
+                nombre, contrasena
+            );
+
+            if(estudiante == null) {
+                SwingVerInicioSesion1.mostrarMensajeError(
+                    "Usuario o contrasena incorrectos"
+                );
+            }
+            else {
+                EstudianteActivo = estudiante;
+
+                SwingVerInicioSesion1.cerrarVentanaInicioDeSesion();
+
+                ControlMenu menu = new ControlMenu(EstudianteActivo);
+                menu.iniciarMenuPrincipal();
+            }
+        }
+        catch(RuntimeException e) {
+            SwingVerInicioSesion1.mostrarMensajeError(
+                "No se pudo conectar con la base de datos"
+            );
+            e.printStackTrace();
+        }
     }
 
     public void iniciarInicioSesion(){
         SwingVerInicioSesion1.setVisible(true);
     }
 }
+

@@ -38,4 +38,15 @@ public class Estudiante {
         }
         return VerificadorContrasena;
     }
+
+    
+    public void cargarPuntaje(double puntos) {
+        this.PuntajeEstudiante = puntos;
+    }
+
+    public void cargarIntentos(double intentos) {
+        this.IntentosEstudiante = intentos;
+    }
+
+
 }

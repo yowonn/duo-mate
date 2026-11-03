@@ -29,4 +29,39 @@ public class BaseEstudiantes {
             .append("intentos", EstudianteNuevo.getIntentosEstudiante());
         obtenerColeccion().insertOne(DocumentoEstudiante);
     }
+
+    
+    public static Estudiante iniciarSesion(String nombre, String contrasena) {
+
+        Document encontrado = obtenerColeccion()
+            .find(Filters.eq("nombre", nombre))
+            .first();
+
+        if(encontrado == null) {
+            return null;
+        }
+
+        String contrasenaGuardada = encontrado.getString("contrasena");
+
+        if(contrasenaGuardada == null ||
+        !contrasenaGuardada.equals(contrasena)) {
+            return null;
+        }
+
+        Estudiante estudiante = new Estudiante(nombre, contrasena);
+
+        Number puntos = encontrado.get("puntaje", Number.class);
+        Number intentos = encontrado.get("intentos", Number.class);
+
+        if(puntos != null) {
+            estudiante.cargarPuntaje(puntos.doubleValue());
+        }
+
+        if(intentos != null) {
+            estudiante.cargarIntentos(intentos.doubleValue());
+        }
+
+        return estudiante;
+    }
+
 }
