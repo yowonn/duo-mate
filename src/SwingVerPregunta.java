@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import org.scilab.forge.jlatexmath.TeXConstants;
+import org.scilab.forge.jlatexmath.TeXFormula;
+import org.scilab.forge.jlatexmath.TeXIcon;
 
 import javax.swing.border.EmptyBorder;
 
@@ -33,13 +36,14 @@ public class SwingVerPregunta extends JFrame{
         DisenoPreguntas.disenarPanel(PanelOpciones);
         DisenoPreguntas.disenarPanel(PanelBotones);
 
-        JLabel PlantearPregunta = new JLabel(InformacionPregunta[0]);
+
+        JLabel PlantearPregunta = new JLabel(convertirLatex(InformacionPregunta[0], 20));
         DisenoPreguntas.disenarPregunta(PlantearPregunta);
 
-        Eleccion1 = new JButton("<html><center>" + InformacionPregunta[1] + "</center></html>");
-        Eleccion2 = new JButton("<html><center>" + InformacionPregunta[2] + "</center></html>");
-        Eleccion3 = new JButton("<html><center>" + InformacionPregunta[3] + "</center></html>");
-        Eleccion4 = new JButton("<html><center>" + InformacionPregunta[4] + "</center></html>");
+        Eleccion1 = new JButton(convertirLatex(InformacionPregunta[1], 20));
+        Eleccion2 = new JButton(convertirLatex(InformacionPregunta[2], 20));
+        Eleccion3 = new JButton(convertirLatex(InformacionPregunta[3], 20));
+        Eleccion4 = new JButton(convertirLatex(InformacionPregunta[4], 20));
 
         DisenoPreguntas.disenarBoton(Eleccion1);
         DisenoPreguntas.disenarBoton(Eleccion2);
@@ -151,6 +155,11 @@ public class SwingVerPregunta extends JFrame{
 
     public void presionarSiguiente(ActionListener accion) {
         BotonSiguiente.addActionListener(accion);
+    }
+
+    public TeXIcon convertirLatex(String TextoParaConvertir, int TamanoTexto){
+        TeXIcon TextoEnLatex = new TeXFormula(TextoParaConvertir).createTeXIcon(TeXConstants.STYLE_DISPLAY, TamanoTexto);
+        return TextoEnLatex;
     }
 
 }

@@ -3,11 +3,11 @@ public class ModeloPreguntas {
 
     public String[] Modulo1_Factorizacion(){
         String[] M1_p1 = new String[6];
-        M1_p1[0] = "\nFactorizar: \n(a + b)(a^2) - a^2"; //Pregunta
-        M1_p1[1] = "\n(-1)(-a^2 - b + 1)"; //Opcion 1
-        M1_p1[2] = "\n(b -1)(a)"; //Opcion 2
-        M1_p1[3] = "\n(a^2)(a + b - 1)"; //Opcion 3
-        M1_p1[4] = "\n(1 - a)(b + a)"; //Opcion 4
+        M1_p1[0] = "\\text{Factorizar:}\\quad (a + b)(a^{2}) - a^{2}"; //Pregunta
+        M1_p1[1] = "(-1)(-a^{2} - b + 1)"; //Opcion 1
+        M1_p1[2] = "(b - 1)(a)"; //Opcion 2
+        M1_p1[3] = "(a^{2})(a + b - 1)"; //Opcion 3
+        M1_p1[4] = "(1 - a)(b + a)"; //Opcion 4
         M1_p1[5] = "3"; //Respuesta correcta
 
         return M1_p1;
@@ -15,33 +15,49 @@ public class ModeloPreguntas {
 
     public String[] Modulo1_RACIONALIZACION(){
         String[] M1_p2 = new String[6];
-        M1_p2[0] = "\nRacionalizar: \n56/√(2)"; //Pregunta
-        M1_p2[1] = "\n56/2"; //Opcion 1
-        M1_p2[2] = "\n(56)(√2)/√(2)"; //Opcion 2
-        M1_p2[3] = "\n(56)(√2)"; //Opcion 3
-        M1_p2[4] = "\n(28)(√2)"; //Opcion 4
+        M1_p2[0] = "\\text{Racionalizar:}\\quad \\frac{56}{\\sqrt{2}}"; //Pregunta
+        M1_p2[1] = "\\frac{56}{2}"; //Opcion 1
+        M1_p2[2] = "\\frac{(56)(\\sqrt{2})}{\\sqrt{2}}"; //Opcion 2
+        M1_p2[3] = "(56)(\\sqrt{2})"; //Opcion 3
+        M1_p2[4] = "(28)(\\sqrt{2})"; //Opcion 4
         M1_p2[5] = "4"; //Respuesta correcta
         return M1_p2;
     }
 
     public String[] Modulo1_ECUACION_RECTA(){
         String[] M1_p2 = new String[6];
-        M1_p2[0] = "\n¿Cual es la pendiente de la curva en la siguiente expresion?: \ny = mx + 2b"; //Pregunta CUAL ES LA PENDIENTE DE LA RECTA
-        M1_p2[1] = "\nm"; //Opcion 1
-        M1_p2[2] = "\n2"; //Opcion 2
-        M1_p2[3] = "\nx"; //Opcion 3
-        M1_p2[4] = "\nb"; //Opcion 4
+        M1_p2[0] = "\\text{¿Cuál es la pendiente de la siguiente recta?}\\quad y = mx + 2b"; //Pregunta CUAL ES LA PENDIENTE DE LA RECTA
+        M1_p2[1] = "m"; //Opcion 1
+        M1_p2[2] = "2"; //Opcion 2
+        M1_p2[3] = "x"; //Opcion 3
+        M1_p2[4] = "b"; //Opcion 4
         M1_p2[5] = "1"; //Respuesta correcta
         return M1_p2;
     }
 
     public String[] Modulo1_TRANSFORMACIONES_f(){
         String[] M1_p2 = new String[6];
-        M1_p2[0] = "\n¿Que transformación provoca el +2?: \nf(x) = m(x+2) + b"; //Pregunta QUE TRASNFORMACION HACE EL +2
-        M1_p2[1] = "\nSe desplaza 2 en x, hacia la derecha"; //Opcion 1
-        M1_p2[2] = "\nSe desplaza 2 en x, hacia la izquierda"; //Opcion 2
-        M1_p2[3] = "\nSe desplaza 2 en y, hacia arriba"; //Opcion 3
-        M1_p2[4] = "\nSe desplaza 2 en y, hacia abajo"; //Opcion 4
+        M1_p2[0] = "\\text{¿Qué transformación provoca el +2?} \\quad f(x) = m(x + 2) + b"; //Pregunta QUE TRASNFORMACION HACE EL +2
+        M1_p2[1] = "\\begin{array}{c}"
+                + "\\text{Se desplaza 2 en } x"
+                + "\\\\ \\text{hacia la derecha}"
+                + "\\end{array}"; //Opcion 1
+
+        M1_p2[2] = "\\begin{array}{c}"
+                + "\\text{Se desplaza 2 en } x"
+                + "\\\\ \\text{hacia la izquierda}"
+                + "\\end{array}"; //Opcion 2
+
+        M1_p2[3] = "\\begin{array}{c}"
+                + "\\text{Se desplaza 2 en } y"
+                + "\\\\ \\text{hacia arriba}"
+                + "\\end{array}"; //Opcion 3
+
+        M1_p2[4] = "\\begin{array}{c}"
+                + "\\text{Se desplaza 2 en } y"
+                + "\\\\ \\text{hacia abajo}"
+                + "\\end{array}"; //Opcion 4
+
         M1_p2[5] = "2"; //Respuesta correcta
         return M1_p2;
     }
