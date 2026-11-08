@@ -1,6 +1,8 @@
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 import org.bson.Document;
+
 
 //Esta clase es la unica que habla con la coleccion "estudiantes" de MongoDB.
 //Los controladores la usan, pero no saben como funciona MongoDB por dentro.
@@ -62,6 +64,17 @@ public class BaseEstudiantes {
         }
 
         return estudiante;
+    }
+
+    //Busca al estudiante por su nombre y reemplaza su puntaje e intentos con los valores actuales del objeto
+    public static void actualizarProgreso(Estudiante EstudianteActivo){
+        obtenerColeccion().updateOne(
+            Filters.eq("nombre", EstudianteActivo.getNombreEstudiante()),
+            Updates.combine(
+                Updates.set("puntaje", EstudianteActivo.getPuntajeEstudiante()),
+                Updates.set("intentos", EstudianteActivo.getIntentosEstudiante())
+            )
+        );
     }
 
 }

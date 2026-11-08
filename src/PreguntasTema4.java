@@ -17,11 +17,8 @@ public class PreguntasTema4 extends Preguntas{
         else if(ContadorPreguntas == 3){
             ejecutarPregunta(ModeloPreguntas1.Modulo3_Probabilidad());
         }
-        else{
-            EstudianteActivo.sumaIntentos(ContadorPreguntas);
-            EstudianteActivo.sumaPuntaje(ContadorCorrectas);
-            ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
-            ControlMenu1.iniciarMenuPrincipal();
+                else{
+            terminarSerie();
         }
     }
 }

@@ -17,11 +17,9 @@ public class PreguntasTema2 extends Preguntas{
         else if(ContadorPreguntas == 3){
             ejecutarPregunta(ModeloPreguntas1.Modulo2_Asintota_f());
         }
-        else{
-            EstudianteActivo.sumaIntentos(ContadorPreguntas);
-            EstudianteActivo.sumaPuntaje(ContadorCorrectas);
-            ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
-            ControlMenu1.iniciarMenuPrincipal();
+                else{
+            terminarSerie();
         }
     }
 }
+        

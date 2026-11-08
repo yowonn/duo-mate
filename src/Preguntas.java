@@ -28,10 +28,29 @@ public class Preguntas {
             ejecutarPregunta(ModeloPreguntas1.Modulo1_TRANSFORMACIONES_f());
         }
         else{
-            EstudianteActivo.sumaIntentos(ContadorPreguntas);
-            EstudianteActivo.sumaPuntaje(ContadorCorrectas);
-            ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
-            ControlMenu1.iniciarMenuPrincipal();
+            terminarSerie();
+        }
+    }
+        //Se llama cuando ya se respondieron las 4 preguntas del tema.
+    //Suma los resultados, los guarda en MongoDB y regresa al menu.
+    protected void terminarSerie(){
+        EstudianteActivo.sumaIntentos(ContadorPreguntas);
+        EstudianteActivo.sumaPuntaje(ContadorCorrectas);
+        guardarProgreso();
+        ControlMenu ControlMenu1 = new ControlMenu(EstudianteActivo);
+        ControlMenu1.iniciarMenuPrincipal();
+    }
+
+    //Intenta guardar en la base de datos. Si no hay internet,
+    //avisa al usuario pero no cierra el programa.
+    private void guardarProgreso(){
+        try{
+            BaseEstudiantes.actualizarProgreso(EstudianteActivo);
+        }
+        catch(RuntimeException e){
+            DisenoMensajes.mostrarMensaje(null, "¡Atención!",
+                "No se pudo guardar tu progreso. Revisa tu conexion a internet", false);
+            e.printStackTrace();
         }
     }
 
