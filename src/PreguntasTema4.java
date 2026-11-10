@@ -6,16 +6,16 @@ public class PreguntasTema4 extends Preguntas{
     @Override 
     public void ejecutarSerie(){
         if(ContadorPreguntas == 0){
-            ejecutarPregunta(ModeloPreguntas1.Modulo3_Dom_Range_f_log());
+            ejecutarPregunta(ModeloPreguntas1.Modulo4_Trigonometrica_circulo());
         }
         else if(ContadorPreguntas == 1){
-            ejecutarPregunta(ModeloPreguntas1.Modulo3_Exponencial());
+            ejecutarPregunta(ModeloPreguntas1.Modulo4_Trigonometrica_sin());
         }
         else if(ContadorPreguntas == 2){
-            ejecutarPregunta(ModeloPreguntas1.Modulo3_Logaritmos());
+            ejecutarPregunta(ModeloPreguntas1.Modulo4_Trigonometrica_cos());
         }
         else if(ContadorPreguntas == 3){
-            ejecutarPregunta(ModeloPreguntas1.Modulo3_Probabilidad());
+            ejecutarPregunta(ModeloPreguntas1.Modulo4_Trigonometrica_tan());
         }
                 else{
             terminarSerie();
