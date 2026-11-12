@@ -15,6 +15,7 @@ public class DisenoMensajes {
 
         JDialog dialogo = new JDialog(ventana, titulo, true);
         dialogo.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        dialogo.setResizable(false);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -62,6 +63,7 @@ public class DisenoMensajes {
 
         JDialog dialogo = new JDialog(ventana, titulo, true);
         dialogo.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        dialogo.setResizable(false);
 
         final boolean[] confirmado = {false};
 

@@ -15,6 +15,7 @@ public class SwingVerProgreso extends JFrame {
 
         setTitle("Duo-Mate - Mi Progreso");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         JPanel PanelPrincipal = new JPanel(new GridBagLayout());
         DisenoMenuPrincipal.disenarPanel(PanelPrincipal);

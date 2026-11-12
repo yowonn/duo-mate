@@ -21,6 +21,7 @@ public class SwingVerPregunta extends JFrame{
     public SwingVerPregunta(String[] InformacionPregunta){
         setTitle("Pregunta");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         JPanel PanelPrincipal = new JPanel();
         PanelPrincipal.setLayout(new BoxLayout(PanelPrincipal, BoxLayout.Y_AXIS));

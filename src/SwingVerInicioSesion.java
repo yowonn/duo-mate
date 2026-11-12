@@ -16,6 +16,7 @@ public class SwingVerInicioSesion extends JFrame {
 
         setTitle("Duo-Mate - Inicio de Sesion");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
 
 
         JPanel PanelPrincipal = new JPanel(new GridBagLayout());
